@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/InputProvince/Create.cshtml" hash="33d6add4" filehash="3157a15667d3" flags="110000" assembly="App_Web_wprdseq0" type="ASP._Page_Views_InputProvince_Create_cshtml">
-    <filedeps>
-        <filedep name="/Views/InputProvince/Create.cshtml" />
-    </filedeps>
-</preserve>

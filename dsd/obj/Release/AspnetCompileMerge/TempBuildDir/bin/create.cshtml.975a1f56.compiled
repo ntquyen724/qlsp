@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/Coupon/Create.cshtml" hash="33d6add4" filehash="a388ac6dae3" flags="110000" assembly="App_Web_vekrlc5j" type="ASP._Page_Views_Coupon_Create_cshtml">
-    <filedeps>
-        <filedep name="/Views/Coupon/Create.cshtml" />
-    </filedeps>
-</preserve>

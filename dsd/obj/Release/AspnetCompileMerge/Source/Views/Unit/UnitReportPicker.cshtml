@@ -1,2 +1,0 @@
-﻿@model List<UnitReport>
-@Html.CusDropdownListSelect2("IDUnitReport", "IDUnitReport", Locate.T("Đơn vị ngành dọc"), Model.Select(t => new SelectListItem { Text = t.Name, Value = t.ID.ToString() }).ToList())

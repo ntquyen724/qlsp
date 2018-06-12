@@ -1,2 +1,0 @@
-﻿@model List<Target>
-@Html.DropDownList("IDTarget", Model.Select(x => new SelectListItem() { Text = x.Name, Value = x.ID.ToString() }).ToList(), Locate.T("--- Chọn chỉ tiêu ---"), new { @class = "form-control input-sm select_change", @data_url = Locate.Url("/coupon/FormPicker.html"), @data_target = "#form-child" })
