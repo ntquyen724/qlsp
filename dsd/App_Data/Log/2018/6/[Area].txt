@@ -1,0 +1,245 @@
+
+
+[05-06-2018 17:55:34]:	INSERT INTO [Area] ([IDChannel],[Code],[AreaType],[Name],[Parent],[Created],[CreatedBy],[Updated],[UpdatedBy],[SearchMeta]) OUTPUT INSERTED.[ID] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9)
+
+
+[05-06-2018 17:55:34]:	INSERT INTO [Area] ([IDChannel],[Code],[AreaType],[Name],[Parent],[Created],[CreatedBy],[Updated],[UpdatedBy],[SearchMeta]) OUTPUT INSERTED.[ID] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9)
+	 -> @0 [Int32] = "0"
+	 -> @1 [String] = "Cẩm Phả"
+	 -> @2 [Int32] = "4"
+	 -> @3 [String] = "Quang Hanh"
+	 -> @4 [Int32] = "0"
+	 -> @5 [DateTime] = "6/5/2018 5:55:34 PM"
+	 -> @6 [Int32] = "0"
+	 -> @7 [DBNull] = ""
+	 -> @8 [DBNull] = ""
+	 -> @9 [String] = "cam pha quang hanh"
+
+
+[05-06-2018 17:55:34]:	System.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'ID', table 'HUNGTHINHCLOUDRPT.dbo.Area'; column does not allow nulls. INSERT fails.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at System.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at System.Data.SqlClient.SqlDataReader.Read()
+   at System.Data.SqlClient.SqlCommand.CompleteExecuteScalar(SqlDataReader ds, Boolean returnSqlValue)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at PetaPoco.Database.ExecuteScalarHelper(IDbCommand cmd)
+   at PetaPoco.Providers.SqlServerDatabaseProvider.ExecuteInsert(Database db, IDbCommand cmd, String primaryKeyName)
+   at PetaPoco.Database.ExecuteInsert(String tableName, String primaryKeyName, Boolean autoIncrement, Object poco)
+   at PetaPoco.Database.PoCoInsert(Object poco)
+   at DocProModel.Models.DataContext`1.Insert(T obj)
+ClientConnectionId:78f3c672-0851-4998-b068-3cbfa9856add
+Error Number:515,State:2,Class:16
+
+
+[06-06-2018 8:51:29]:	INSERT INTO [Area] ([IDChannel],[Code],[AreaType],[Name],[Parent],[Created],[CreatedBy],[Updated],[UpdatedBy],[SearchMeta]) OUTPUT INSERTED.[ID] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9)
+
+
+[06-06-2018 8:51:29]:	INSERT INTO [Area] ([IDChannel],[Code],[AreaType],[Name],[Parent],[Created],[CreatedBy],[Updated],[UpdatedBy],[SearchMeta]) OUTPUT INSERTED.[ID] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9)
+	 -> @0 [Int32] = "0"
+	 -> @1 [String] = "Quang Hanh"
+	 -> @2 [Int32] = "4"
+	 -> @3 [String] = "Khu 7A"
+	 -> @4 [Int32] = "1"
+	 -> @5 [DateTime] = "6/6/2018 8:51:29 AM"
+	 -> @6 [Int32] = "0"
+	 -> @7 [DBNull] = ""
+	 -> @8 [DBNull] = ""
+	 -> @9 [String] = "quang hanh khu 7a"
+
+
+[06-06-2018 8:51:29]:	System.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'ID', table 'HUNGTHINHCLOUDRPT.dbo.Area'; column does not allow nulls. INSERT fails.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at System.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at System.Data.SqlClient.SqlDataReader.Read()
+   at System.Data.SqlClient.SqlCommand.CompleteExecuteScalar(SqlDataReader ds, Boolean returnSqlValue)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at PetaPoco.Database.ExecuteScalarHelper(IDbCommand cmd)
+   at PetaPoco.Providers.SqlServerDatabaseProvider.ExecuteInsert(Database db, IDbCommand cmd, String primaryKeyName)
+   at PetaPoco.Database.ExecuteInsert(String tableName, String primaryKeyName, Boolean autoIncrement, Object poco)
+   at PetaPoco.Database.PoCoInsert(Object poco)
+   at DocProModel.Models.DataContext`1.Insert(T obj)
+ClientConnectionId:2fb52235-fb61-4bd2-b8f7-a555fd3f6755
+Error Number:515,State:2,Class:16
+
+
+[06-06-2018 8:53:38]:	INSERT INTO [Area] ([IDChannel],[Code],[AreaType],[Name],[Parent],[Created],[CreatedBy],[Updated],[UpdatedBy],[SearchMeta]) OUTPUT INSERTED.[ID] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9)
+
+
+[06-06-2018 8:53:38]:	INSERT INTO [Area] ([IDChannel],[Code],[AreaType],[Name],[Parent],[Created],[CreatedBy],[Updated],[UpdatedBy],[SearchMeta]) OUTPUT INSERTED.[ID] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9)
+	 -> @0 [Int32] = "0"
+	 -> @1 [String] = "Quang Hanh"
+	 -> @2 [Int32] = "4"
+	 -> @3 [String] = "Khu 7A"
+	 -> @4 [Int32] = "1"
+	 -> @5 [DateTime] = "6/6/2018 8:52:26 AM"
+	 -> @6 [Int32] = "0"
+	 -> @7 [DBNull] = ""
+	 -> @8 [DBNull] = ""
+	 -> @9 [String] = "quang hanh khu 7a"
+
+
+[06-06-2018 8:53:38]:	System.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'ID', table 'HUNGTHINHCLOUDRPT.dbo.Area'; column does not allow nulls. INSERT fails.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at System.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at System.Data.SqlClient.SqlDataReader.Read()
+   at System.Data.SqlClient.SqlCommand.CompleteExecuteScalar(SqlDataReader ds, Boolean returnSqlValue)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at PetaPoco.Database.ExecuteScalarHelper(IDbCommand cmd)
+   at PetaPoco.Providers.SqlServerDatabaseProvider.ExecuteInsert(Database db, IDbCommand cmd, String primaryKeyName)
+   at PetaPoco.Database.ExecuteInsert(String tableName, String primaryKeyName, Boolean autoIncrement, Object poco)
+   at PetaPoco.Database.PoCoInsert(Object poco)
+   at DocProModel.Models.DataContext`1.Insert(T obj)
+ClientConnectionId:2fb52235-fb61-4bd2-b8f7-a555fd3f6755
+Error Number:515,State:2,Class:16
+
+
+[06-06-2018 8:56:40]:	INSERT INTO [Area] ([IDChannel],[Code],[AreaType],[Name],[Parent],[Created],[CreatedBy],[Updated],[UpdatedBy],[SearchMeta]) OUTPUT INSERTED.[ID] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9)
+
+
+[06-06-2018 8:56:40]:	INSERT INTO [Area] ([IDChannel],[Code],[AreaType],[Name],[Parent],[Created],[CreatedBy],[Updated],[UpdatedBy],[SearchMeta]) OUTPUT INSERTED.[ID] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9)
+	 -> @0 [Int32] = "0"
+	 -> @1 [String] = "Quang Hanh"
+	 -> @2 [Int32] = "4"
+	 -> @3 [String] = "Khu 7A"
+	 -> @4 [Int32] = "1"
+	 -> @5 [DateTime] = "6/6/2018 8:56:32 AM"
+	 -> @6 [Int32] = "0"
+	 -> @7 [DBNull] = ""
+	 -> @8 [DBNull] = ""
+	 -> @9 [String] = "quang hanh khu 7a"
+
+
+[06-06-2018 8:56:40]:	System.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'ID', table 'HUNGTHINHCLOUDRPT.dbo.Area'; column does not allow nulls. INSERT fails.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at System.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at System.Data.SqlClient.SqlDataReader.Read()
+   at System.Data.SqlClient.SqlCommand.CompleteExecuteScalar(SqlDataReader ds, Boolean returnSqlValue)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at PetaPoco.Database.ExecuteScalarHelper(IDbCommand cmd)
+   at PetaPoco.Providers.SqlServerDatabaseProvider.ExecuteInsert(Database db, IDbCommand cmd, String primaryKeyName)
+   at PetaPoco.Database.ExecuteInsert(String tableName, String primaryKeyName, Boolean autoIncrement, Object poco)
+   at PetaPoco.Database.PoCoInsert(Object poco)
+   at DocProModel.Models.DataContext`1.Insert(T obj)
+ClientConnectionId:2fb52235-fb61-4bd2-b8f7-a555fd3f6755
+Error Number:515,State:2,Class:16
+
+
+[06-06-2018 8:56:43]:	INSERT INTO [Area] ([IDChannel],[Code],[AreaType],[Name],[Parent],[Created],[CreatedBy],[Updated],[UpdatedBy],[SearchMeta]) OUTPUT INSERTED.[ID] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9)
+
+
+[06-06-2018 8:56:43]:	INSERT INTO [Area] ([IDChannel],[Code],[AreaType],[Name],[Parent],[Created],[CreatedBy],[Updated],[UpdatedBy],[SearchMeta]) OUTPUT INSERTED.[ID] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9)
+	 -> @0 [Int32] = "0"
+	 -> @1 [String] = "Quang Hanh"
+	 -> @2 [Int32] = "4"
+	 -> @3 [String] = "Khu 7A"
+	 -> @4 [Int32] = "1"
+	 -> @5 [DateTime] = "6/6/2018 8:56:32 AM"
+	 -> @6 [Int32] = "0"
+	 -> @7 [DBNull] = ""
+	 -> @8 [DBNull] = ""
+	 -> @9 [String] = "quang hanh khu 7a"
+
+
+[06-06-2018 8:56:43]:	System.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'ID', table 'HUNGTHINHCLOUDRPT.dbo.Area'; column does not allow nulls. INSERT fails.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at System.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at System.Data.SqlClient.SqlDataReader.Read()
+   at System.Data.SqlClient.SqlCommand.CompleteExecuteScalar(SqlDataReader ds, Boolean returnSqlValue)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at PetaPoco.Database.ExecuteScalarHelper(IDbCommand cmd)
+   at PetaPoco.Providers.SqlServerDatabaseProvider.ExecuteInsert(Database db, IDbCommand cmd, String primaryKeyName)
+   at PetaPoco.Database.ExecuteInsert(String tableName, String primaryKeyName, Boolean autoIncrement, Object poco)
+   at PetaPoco.Database.PoCoInsert(Object poco)
+   at DocProModel.Models.DataContext`1.Insert(T obj)
+ClientConnectionId:2fb52235-fb61-4bd2-b8f7-a555fd3f6755
+Error Number:515,State:2,Class:16
+
+
+[06-06-2018 8:56:53]:	INSERT INTO [Area] ([IDChannel],[Code],[AreaType],[Name],[Parent],[Created],[CreatedBy],[Updated],[UpdatedBy],[SearchMeta]) OUTPUT INSERTED.[ID] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9)
+
+
+[06-06-2018 8:56:53]:	INSERT INTO [Area] ([IDChannel],[Code],[AreaType],[Name],[Parent],[Created],[CreatedBy],[Updated],[UpdatedBy],[SearchMeta]) OUTPUT INSERTED.[ID] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9)
+	 -> @0 [Int32] = "0"
+	 -> @1 [String] = "Quang Hanh"
+	 -> @2 [Int32] = "4"
+	 -> @3 [String] = "Khu 7A"
+	 -> @4 [Int32] = "1"
+	 -> @5 [DateTime] = "6/6/2018 8:56:53 AM"
+	 -> @6 [Int32] = "0"
+	 -> @7 [DBNull] = ""
+	 -> @8 [DBNull] = ""
+	 -> @9 [String] = "quang hanh khu 7a"
+
+
+[06-06-2018 8:56:53]:	System.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'ID', table 'HUNGTHINHCLOUDRPT.dbo.Area'; column does not allow nulls. INSERT fails.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at System.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at System.Data.SqlClient.SqlDataReader.Read()
+   at System.Data.SqlClient.SqlCommand.CompleteExecuteScalar(SqlDataReader ds, Boolean returnSqlValue)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at PetaPoco.Database.ExecuteScalarHelper(IDbCommand cmd)
+   at PetaPoco.Providers.SqlServerDatabaseProvider.ExecuteInsert(Database db, IDbCommand cmd, String primaryKeyName)
+   at PetaPoco.Database.ExecuteInsert(String tableName, String primaryKeyName, Boolean autoIncrement, Object poco)
+   at PetaPoco.Database.PoCoInsert(Object poco)
+   at DocProModel.Models.DataContext`1.Insert(T obj)
+ClientConnectionId:2fb52235-fb61-4bd2-b8f7-a555fd3f6755
+Error Number:515,State:2,Class:16
+
+
+[06-06-2018 9:2:4]:	INSERT INTO [Area] ([IDChannel],[Code],[AreaType],[Name],[Parent],[Created],[CreatedBy],[Updated],[UpdatedBy],[SearchMeta]) OUTPUT INSERTED.[ID] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9)
+
+
+[06-06-2018 9:2:4]:	INSERT INTO [Area] ([IDChannel],[Code],[AreaType],[Name],[Parent],[Created],[CreatedBy],[Updated],[UpdatedBy],[SearchMeta]) OUTPUT INSERTED.[ID] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9)
+	 -> @0 [Int32] = "0"
+	 -> @1 [String] = "Quang Hanh"
+	 -> @2 [Int32] = "4"
+	 -> @3 [String] = "Khu 7A"
+	 -> @4 [Int32] = "1"
+	 -> @5 [DateTime] = "6/6/2018 9:02:04 AM"
+	 -> @6 [Int32] = "2"
+	 -> @7 [DBNull] = ""
+	 -> @8 [DBNull] = ""
+	 -> @9 [String] = "quang hanh khu 7a"
+
+
+[06-06-2018 9:2:4]:	System.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'ID', table 'HUNGTHINHCLOUDRPT.dbo.Area'; column does not allow nulls. INSERT fails.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at System.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at System.Data.SqlClient.SqlDataReader.Read()
+   at System.Data.SqlClient.SqlCommand.CompleteExecuteScalar(SqlDataReader ds, Boolean returnSqlValue)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at PetaPoco.Database.ExecuteScalarHelper(IDbCommand cmd)
+   at PetaPoco.Providers.SqlServerDatabaseProvider.ExecuteInsert(Database db, IDbCommand cmd, String primaryKeyName)
+   at PetaPoco.Database.ExecuteInsert(String tableName, String primaryKeyName, Boolean autoIncrement, Object poco)
+   at PetaPoco.Database.PoCoInsert(Object poco)
+   at DocProModel.Models.DataContext`1.Insert(T obj)
+ClientConnectionId:1b49d963-047c-4fbe-a9af-760c5f2e3635
+Error Number:515,State:2,Class:16

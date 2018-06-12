@@ -1,0 +1,3 @@
+﻿@model List<Area>
+@Html.DropDownList("IDDistric", Model.Select(x => new SelectListItem() { Text = x.Name, Value = x.ID.ToString() }).ToList(), new { @class = "form -control input-sm select_change_inputarea", @data_url = Locate.Url("/input/InputDataPicker.html"), @data_target = "#input-data" })
+

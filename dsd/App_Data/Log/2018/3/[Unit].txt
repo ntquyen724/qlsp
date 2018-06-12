@@ -1,0 +1,38 @@
+
+
+[30-03-2018 18:5:47]:	INSERT INTO [Unit] ([IDChannel],[Code],[Name],[GrantReport],[IDUnitReport],[Parent],[Parents],[UnitType],[IDArea],[Descriabe],[Weight],[Created],[CreatedBy],[Updated],[UpdatedBy]) OUTPUT INSERTED.[ID] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14)
+
+
+[30-03-2018 18:5:47]:	INSERT INTO [Unit] ([IDChannel],[Code],[Name],[GrantReport],[IDUnitReport],[Parent],[Parents],[UnitType],[IDArea],[Descriabe],[Weight],[Created],[CreatedBy],[Updated],[UpdatedBy]) OUTPUT INSERTED.[ID] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14)
+	 -> @0 [Int32] = "0"
+	 -> @1 [String] = "dfd"
+	 -> @2 [String] = "dfdf"
+	 -> @3 [Int32] = "0"
+	 -> @4 [Int32] = "0"
+	 -> @5 [DBNull] = ""
+	 -> @6 [DBNull] = ""
+	 -> @7 [Int32] = "1"
+	 -> @8 [Int32] = "3"
+	 -> @9 [String] = ""
+	 -> @10 [Int32] = "0"
+	 -> @11 [DateTime] = "30/03/2018 6:05:47 CH"
+	 -> @12 [Int32] = "29"
+	 -> @13 [DBNull] = ""
+	 -> @14 [DBNull] = ""
+
+
+[30-03-2018 18:5:47]:	System.Data.SqlClient.SqlException (0x80131904): Conversion failed when converting the nvarchar value 'dfd' to data type int.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at System.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at System.Data.SqlClient.SqlDataReader.Read()
+   at System.Data.SqlClient.SqlCommand.CompleteExecuteScalar(SqlDataReader ds, Boolean returnSqlValue)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at PetaPoco.Database.ExecuteScalarHelper(IDbCommand cmd)
+   at PetaPoco.Database.ExecuteInsert(String tableName, String primaryKeyName, Boolean autoIncrement, Object poco)
+   at PetaPoco.Database.PoCoInsert(Object poco)
+   at DocProModel.Models.DataContext`1.Insert(T obj)
+ClientConnectionId:bcfef94b-bda6-41a6-88df-9d381355ea3f
+Error Number:245,State:1,Class:16

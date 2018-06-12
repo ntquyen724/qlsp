@@ -1,0 +1,163 @@
+﻿<form id="FrmCrFolder" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-valid="glyphicon glyphicon-ok" action="/stg/myfile/save.html" class="form-horizontal bv-form validateForm bootstrapValidator ui-dialog-content ui-widget-content" method="post" novalidate="novalidate" style="width: auto; min-height: 95px; max-height: none; height: auto;">
+    <button type="submit" class="bv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button>
+    <div class="container-fluid">
+        <aside class="arrow no-margin-top">@Locate.T("Thông tin chung")</aside>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Mã phiếu") <span class="red">*</span></label>
+            <div class="col-lg-8">
+                <input id="CrFolderName" name="Name" type="text" data-bv-notempty-message="Tên thư mục không được trống" data-bv-notempty="true" placeholder="Mã phiếu" class="form-control" data-bv-field="Name"><i class="form-control-feedback" data-bv-icon-for="Name" style="display: none;"></i>
+                <small class="help-block" data-bv-validator="notEmpty" data-bv-for="Name" data-bv-result="NOT_VALIDATED" style="display: none;">Tên thư mục không được trống</small>
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Tên phiếu") <span class="red">*</span></label>
+            <div class="col-lg-8">
+                <input id="CrFolderName" name="Name" type="text" data-bv-notempty-message="Tên thư mục không được trống" data-bv-notempty="true" placeholder="Tên phiếu" class="form-control" data-bv-field="Name"><i class="form-control-feedback" data-bv-icon-for="Name" style="display: none;"></i>
+                <small class="help-block" data-bv-validator="notEmpty" data-bv-for="Name" data-bv-result="NOT_VALIDATED" style="display: none;">Tên thư mục không được trống</small>
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Tiêu đề phiếu") <span class="red">*</span></label>
+            <div class="col-lg-8">
+                <input id="CrFolderName" name="Name" type="text" data-bv-notempty-message="Tên thư mục không được trống" data-bv-notempty="true" placeholder="Tiêu đề phiếu" class="form-control" data-bv-field="Name"><i class="form-control-feedback" data-bv-icon-for="Name" style="display: none;"></i>
+                <small class="help-block" data-bv-validator="notEmpty" data-bv-for="Name" data-bv-result="NOT_VALIDATED" style="display: none;">Tên thư mục không được trống</small>
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Mô tả") <span class="red">*</span></label>
+            <div class="col-lg-8">
+                <input id="CrFolderName" name="Name" type="text" data-bv-notempty-message="Tên thư mục không được trống" data-bv-notempty="true" placeholder="Mô tả" class="form-control" data-bv-field="Name"><i class="form-control-feedback" data-bv-icon-for="Name" style="display: none;"></i>
+                <small class="help-block" data-bv-validator="notEmpty" data-bv-for="Name" data-bv-result="NOT_VALIDATED" style="display: none;">Tên thư mục không được trống</small>
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Trạng thái") <span class="red">*</span></label>
+            <div class="col-lg-8">
+                <select class="form-control">
+                    <option value="" hidden>--Trạng thái--</option>
+                    <option>Đang xử dụng</option>
+                    <option>Không xử dụng</option>
+                </select>
+            </div>
+        </div>
+        <hr />
+        <aside class="arrow no-margin-top">@Locate.T("Đơn vị báo cáo")</aside>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Cấp báo cáo") <span class="red">*</span></label>
+            <div class="col-lg-8">
+                <input id="CrFolderName" name="Name" type="text" data-bv-notempty-message="Tên thư mục không được trống" data-bv-notempty="true" placeholder="Cấp báo cáo" class="form-control" data-bv-field="Name"><i class="form-control-feedback" data-bv-icon-for="Name" style="display: none;"></i>
+                <small class="help-block" data-bv-validator="notEmpty" data-bv-for="Name" data-bv-result="NOT_VALIDATED" style="display: none;">Tên thư mục không được trống</small>
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Đơn vị báo cáo") <span class="red">*</span></label>
+            <div class="col-lg-8">
+                <input id="CrFolderName" name="Name" type="text" data-bv-notempty-message="Tên thư mục không được trống" data-bv-notempty="true" placeholder="Đơn vị báo cáo" class="form-control" data-bv-field="Name"><i class="form-control-feedback" data-bv-icon-for="Name" style="display: none;"></i>
+                <small class="help-block" data-bv-validator="notEmpty" data-bv-for="Name" data-bv-result="NOT_VALIDATED" style="display: none;">Tên thư mục không được trống</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-4 col-lg-8">
+                <button type="submit" class="btn btn-sm btn-primary">Thêm</button>
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>@Locate.T("STT")</th>
+                        <th>@Locate.T("Đơn vị báo cáo")</th>
+                        <th>@Locate.T("Cấp báo cáo")</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr />
+        <aside class="arrow no-margin-top">@Locate.T("Thêm biểu")</aside>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Nhóm chỉ tiêu") <span class="red">*</span></label>
+            <div class="col-lg-8">
+                <select class="form-control">
+                    <option value="" hidden>--Chọn nhóm chỉ tiêu--</option>
+                    <option>Đang xử dụng</option>
+                    <option>Không xử dụng</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Chỉ tiêu") <span class="red">*</span></label>
+            <div class="col-lg-8">
+                <select class="form-control">
+                    <option value="" hidden>--Chọn chỉ tiêu--</option>
+                    <option>Đang xử dụng</option>
+                    <option>Không xử dụng</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Biểu") <span class="red">*</span></label>
+            <div class="col-lg-8">
+                <select class="form-control">
+                    <option value="" hidden>--Chọn biểu--</option>
+                    <option>Đang xử dụng</option>
+                    <option>Không xử dụng</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Kỳ báo cáo") <span class="red">*</span></label>
+            <div class="col-lg-8">
+                <select class="form-control">
+                    <option value="" hidden>--Chọn kỳ báo cáo--</option>
+                    <option>Đang xử dụng</option>
+                    <option>Không xử dụng</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-4 col-lg-8">
+                <button type="submit" class="btn btn-sm btn-primary">Thêm</button>
+                <button type="submit" class="btn btn-sm btn-danger">Xóa</button>
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>@Locate.T("Tên biểu")</th>
+                        <th>@Locate.T("Nhóm chỉ tiêu")</th>
+                        <th>@Locate.T("Chỉ tiêu")</th>
+                        <th>@Locate.T("Kỳ báo cáo")</th>
+                        <th>@Locate.T("Sắp xếp")</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr />
+        <div class="form-group">
+            <div class="col-lg-offset-4 col-lg-8">
+                <button type="submit" class="btn btn-sm btn-primary">Xem</button>
+                <button type="submit" class="btn btn-sm btn-primary">Lưu</button>
+                <button type="submit" class="btn btn-sm btn-primary">Lưu và chuyển</button>
+                <button type="submit" class="btn btn-sm btn-primary">Đóng</button>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" class="redirectauto" name="RedirectPath" value="http://dev.docpro.vn:82/stg/myfile.html?rand=1521768681626">
+</form>

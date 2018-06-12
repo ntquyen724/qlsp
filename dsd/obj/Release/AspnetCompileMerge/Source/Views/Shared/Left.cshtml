@@ -1,0 +1,353 @@
+﻿@{
+    var categoryTypes = ((List<CategoryType>)ViewBag.CategoryTypes
+                         ?? new List<CategoryType>()).OrderBy(x => x.Weight).ToList();
+    string strUrl = Request.Url.ToString().ToLower();
+}
+<div class="sidebar-header-wrapper hidden">
+    <input type="text" class="searchinput" placeholder="@Locate.T("Tìm kiếm")" />
+    <i class="glyphicon orange glyphicon-search"></i>
+    <div class="searchhelper">@Locate.T("Tìm kiếm")</div>
+</div>
+<ul class="nav sidebar-menu useScrollBar">
+
+    @if (ViewBag.CUser.IsAdmin)
+    {
+        <li class="open">
+            <a class="menu-dropdown" href="#">
+                <i class="menu-icon white fa fa-cog"></i>
+                <span class="menu-text">@Locate.T("Quản trị hệ thống")</span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="#" class="menu-dropdown">
+                        <i class="menu-icon glyphicon orange glyphicon-list-alt"></i>
+                        <span class="menu-text">@Locate.T("Nhật ký hệ thống")</span>
+                        <i class="menu-expand"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="@Locate.Url("/log.html")">
+                                <span class="menu-text">@Locate.T("Log truy cập")</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Locate.Url("/log.html?IsLogin=1")">
+                                <span class="menu-text">@Locate.T("Log đăng nhập")</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                @if (ViewBag.CUser.IsAdmin && ViewBag.CUser.IDChannel == 0)
+                {
+                    <li>
+                        <a href="@Locate.Url("/backup.html")">
+                            <i class="menu-icon fa fa-refresh orange themesecondary"></i>
+                            <span class="menu-text">@Locate.T("Sao lưu phục hồi")</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Locate.Url("/translate.html")">
+                            <i class="menu-icon fa orange fa-language"></i>
+                            <span class="menu-text">@Locate.T("Đa ngôn ngữ")</span>
+                        </a>
+                    </li>
+                }
+                <li>
+                    <a href="#" class="menu-dropdown">
+                        <i class="menu-icon orange ionicons ion-android-contact"></i>
+                        <span class="menu-text">@Locate.T("Tài khoản hệ thống")</span>
+                        <i class="menu-expand"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="@Locate.Url("/profile.html")">
+                                <span class="menu-text">@Locate.T("Phân quyền")</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Locate.Url("/role.html")">
+                                <span class="menu-text">@Locate.T("Vai trò")</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Locate.Url("/dept.html")">
+                                <span class="menu-text">@Locate.T("Cơ cấu tổ chức")</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Locate.Url("/position.html")">
+                                <span class="menu-text">@Locate.T("Chức vụ")</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Locate.Url("/team.html")">
+                                <span class="menu-text">@Locate.T("Nhóm")</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Locate.Url("/user.html")">
+                                <span class="menu-text">@Locate.T("Người dùng")</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </li>
+
+    }
+    @if (GlobalConfig.IsAccess(ViewBag.CUser, IModule.QuanLyDanhMuc))
+    {
+        if (Utils.IsNotEmpty<CategoryType>(categoryTypes))
+        {
+            <li class="open">
+                <a class="menu-dropdown" href="#">
+                    <i class="menu-icon white ionicons ion-social-buffer"></i>
+                    <span class="menu-text">@Locate.T("Quản lý danh mục")</span>
+                    <i class="menu-expand"></i>
+                </a>
+                <ul class="submenu">
+                    @foreach (var item in categoryTypes)
+                    {
+                        <li>
+                            <a href="@Locate.Url("/category.html?Type={0}", item.ID)">
+                                <i class="menu-icon orange ionicons ion-social-buffer"></i>
+                                <span class="menu-text">@item.Name</span>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </li>
+        }
+    }
+    @{
+        if (strUrl.Contains("/legaltext") || strUrl.Contains("/legal-text"))
+        {
+            <li class="open">
+                <a class="menu-dropdown" href="#">
+                    <i class="menu-icon glyphicon white glyphicon-book"></i>
+                    <span class="menu-text">@Locate.T("Văn bản pháp luật")</span>
+                    <i class="menu-expand"></i>
+                </a>
+                <ul class="submenu">
+                    <li>
+                        <a href="/legal-text.html">
+                            <i class="menu-icon orange ionicons ion-compose"></i>
+                            <span class="menu-text">@Locate.T("Quản lý văn bản pháp luật")</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        }
+ 
+        else if (strUrl.Contains("/nation"))
+        {
+            <li class="open">
+                <a class="menu-dropdown" href="#">
+                    <i class="menu-icon glyphicon white glyphicon-book"></i>
+                    <span class="menu-text">@Locate.T("Danh sách dân tộc")</span>
+                    <i class="menu-expand"></i>
+                </a>
+                <ul class="submenu">
+                    <li>
+                        <a href="/nation.html">
+                            <i class="menu-icon orange ionicons ion-compose"></i>
+                            <span class="menu-text">@Locate.T("Quản lý danh sách dân tộc")</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        }
+        else { 
+        <li class="open">
+            <a class="menu-dropdown" href="#">
+                <i class="menu-icon glyphicon white glyphicon-book"></i>
+                <span class="menu-text">@Locate.T("Quản lý biểu mẫu")</span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="/form.html">
+                        <i class="menu-icon orange ionicons ion-compose"></i>
+                        <span class="menu-text">@Locate.T("Quản lý tạo biểu")</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/form-approved.html">
+                        <i class="menu-icon orange ionicons ion-compose"></i>
+                        <span class="menu-text">@Locate.T("Quản lý duyệt biểu")</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="open">
+            <a class="menu-dropdown" href="#">
+                <i class="menu-icon glyphicon white glyphicon-book"></i>
+                <span class="menu-text">@Locate.T("Quản lý phiếu nhập")</span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+
+                <li>
+                    <a href="/coupon.html">
+                        <i class="menu-icon orange ionicons ion-compose"></i>
+                        <span class="menu-text">@Locate.T("Quản lý tạo phiếu")</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/coupon-approved.html">
+                        <i class="menu-icon orange ionicons ion-compose"></i>
+                        <span class="menu-text">@Locate.T("Quản lý duyệt phiếu")</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="open">
+            <a class="menu-dropdown" href="#">
+                <i class="menu-icon glyphicon white glyphicon-book"></i>
+                <span class="menu-text">@Locate.T("Quản lý nhập liệu")</span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                @if (ViewBag.CUnit.UnitType == (int)UnitType.SoNganh)
+            {
+                    <li>
+                        <a href="/input-ubdt.html">
+                            <i class="menu-icon orange ionicons ion-compose"></i>
+                            <span class="menu-text">@Locate.T("Nhập liệu tại sở ban ngành")</span>
+                        </a>
+                    </li>
+                }
+                @if (ViewBag.CUnit.UnitType == (int)UnitType.Tinh)
+            {
+                    <li>
+                        <a href="/input-province.html">
+                            <i class="menu-icon orange ionicons ion-compose"></i>
+                            <span class="menu-text">@Locate.T("Nhập liệu cấp Tỉnh")</span>
+                        </a>
+                    </li>
+                }
+                @if (ViewBag.CUnit.UnitType == (int)UnitType.Huyen)
+            {
+                    <li>
+                        <a href="/input-distric.html">
+                            <i class="menu-icon orange ionicons ion-compose"></i>
+                            <span class="menu-text">@Locate.T("Nhập liệu cấp Quận")</span>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </li>
+        <li class="open">
+            <a class="menu-dropdown" href="#">
+                <i class="menu-icon glyphicon white glyphicon-book"></i>
+                <span class="menu-text">@Locate.T("Báo cáo")</span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="@Locate.T("/report.html")">
+                        <i class="menu-icon orange ionicons ion-compose"></i>
+                        <span class="menu-text">@Locate.T("Báo cáo theo chỉ tiêu")</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Locate.T("/report-summary.html")">
+                        <i class="menu-icon orange ionicons ion-compose"></i>
+                        <span class="menu-text">@Locate.T("Báo cáo tổng hợp")</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+            <li class="open">
+                <a class="menu-dropdown" href="#">
+                    <i class="menu-icon glyphicon white glyphicon-book"></i>
+                    <span class="menu-text">@Locate.T("Quản trị hệ thống")</span>
+                    <i class="menu-expand"></i>
+                </a>
+                <ul class="submenu">
+
+                    <li>
+                        <a href="/target-type.html">
+                            <i class="menu-icon orange ionicons ion-compose"></i>
+                            <span class="menu-text">@Locate.T("Nhóm chỉ tiêu")</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/target.html">
+                            <i class="menu-icon orange ionicons ion-compose"></i>
+                            <span class="menu-text">@Locate.T("Chỉ tiêu")</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/target-pro.html">
+                            <i class="menu-icon orange ionicons ion-compose"></i>
+                            <span class="menu-text">@Locate.T("Thuộc tính")</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/unit-report.html">
+                            <i class="menu-icon orange ionicons ion-compose"></i>
+                            <span class="menu-text">@Locate.T("Đơn vị ngành dọc")</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/content-target-type.html">
+                            <i class="menu-icon orange ionicons ion-compose"></i>
+                            <span class="menu-text">@Locate.T("Loại nội dung")</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/content-target.html">
+                            <i class="menu-icon orange ionicons ion-compose"></i>
+                            <span class="menu-text">@Locate.T("Nội dung")</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/area.html">
+                            <i class="menu-icon orange ionicons ion-compose"></i>
+                            <span class="menu-text">@Locate.T("Danh mục vùng miền")</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/province.html">
+                            <i class="menu-icon orange ionicons ion-compose"></i>
+                            <span class="menu-text">@Locate.T("Danh mục Tỉnh/TP")</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/district.html">
+                            <i class="menu-icon orange ionicons ion-compose"></i>
+                            <span class="menu-text">@Locate.T("Danh mục Quận/Huyện")</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/ward.html">
+                            <i class="menu-icon orange ionicons ion-compose"></i>
+                            <span class="menu-text">@Locate.T("Danh mục Phường/Xã")</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/village.html">
+                            <i class="menu-icon orange ionicons ion-compose"></i>
+                            <span class="menu-text">@Locate.T("Danh mục Thôn/Bản")</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=@Locate.Url("/unit.html")>
+                            <i class="menu-icon orange ionicons ion-compose"></i>
+                            <span class="menu-text">@Locate.T("Danh mục đơn vị")</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=@Locate.Url("/config-user-unit.html")>
+                            <i class="menu-icon orange ionicons ion-compose"></i>
+                            <span class="menu-text">@Locate.T("Quản lý người dùng")</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            }
+          }
+    </ul>

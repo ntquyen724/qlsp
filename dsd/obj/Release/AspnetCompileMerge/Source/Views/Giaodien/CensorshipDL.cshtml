@@ -1,0 +1,156 @@
+﻿
+<div class="page-breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="@Locate.Url("/")">@Locate.T("Tổng quan")</a>
+        </li>
+        <li>
+            <a>@Locate.T("Quản lí duyệt biểu")</a>
+        </li>
+        <li class="active">@Locate.T("Quản lí duyệt biểu")</li>
+    </ul>
+</div>
+
+<div class="page-body">
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div class="widget">
+                <div class="widget-header bordered-bottom bordered-yellow">
+                    <a class="widget_back_btn" href="#" title="Quay lại"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> <span>Quay lại</span></a><span class="widget-caption">Quản lí tạo biểu</span>
+                    <div class="widget-buttons">
+                        <a data-toggle="maximize" href="#"><i class="fa fa-expand"></i></a>
+                        <a data-toggle="collapse" href="#"><i class="fa fa-minus"></i></a>
+                        <a data-toggle="dispose" href="#"><i class="fa fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="widget-body no-padding">
+                    <div class="dataTables_wrapper form-inline">
+                        <div class="dataTables_filter">
+                            <form class="quickSearch">
+                                <div class="col-md-2 col-sm-2">
+                                    <label>
+                                        <input class="form-control" placeholder="Nhập tên biểu mẫu ..." name="Term" type="text">
+                                    </label>
+                                </div>
+                                <div class="col-md-2 col-sm-2">
+                                    <label>
+                                        <select class="form-control" placeholder="--Chọn nhóm chỉ tiêu--">
+                                            <option>chỉ tiêu 1</option>
+                                            <option>chỉ tiêu 2</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="col-md-2 col-sm-2">
+                                    <label>
+                                        <select class="form-control" placeholder="--Chọn chỉ tiêu--">
+                                            <option>chỉ tiêu 1</option>
+                                            <option>chỉ tiêu 2</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="col-md-2 col-sm-2">
+                                    <label>
+                                        <select class="form-control" placeholder="--Chọn trạng thái biểu--">
+                                            <option>chỉ tiêu 1</option>
+                                            <option>chỉ tiêu 2</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="col-md-2 col-sm-2">
+                                    <label>
+                                        <select class="form-control" placeholder="--Chọn trạng thái áp dụng--">
+                                            <option>chỉ tiêu 1</option>
+                                            <option>chỉ tiêu 2</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="col-md-2 data_btn col-sm-2">
+                                    <button class="btn btn-info" type="submit"><i class="glyphicon glyphicon-search"></i> Tìm kiếm</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="DTTT btn-group">
+                            <a href="@Locate.Url("/Giaodien/creat-forms-management.html")" data-target=".ui-dialog:visible"  title="@Locate.T(" Tạo mới")" class="btn hidden btn-info quickUpdate" tabindex="0" aria-controls="searchable">
+                                <i class="fa fa-plus"></i>
+                                <span class="menu-text" title="Tạo việc"></span>
+                            </a>
+                            
+                            <div class="btn-group">
+                                <a href="" title="Export dữ liệu" data-toggle="dropdown" class="btn btn-primary dropdown-toggle" aria-expanded="true">
+                                    <i class="fa fa-ellipsis-v"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <a href="/Giaodien/ViewApprovedFormsManagement.html" class="btn btn-sm ">
+                                            <i class="fa fa-file-excel-o"></i> @Locate.T("Xem chi tiết")
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/rpt/export/stgDocGroup.html?type=0&amp;StartDate=01-01-2018&amp;EndDate=31-03-2018" class="btn btn-sm ">
+                                            <i class="fa fa-file-excel-o"></i> @Locate.T("Duyệt")
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/rpt/export/stgDocGroup.html?type=0&amp;StartDate=01-01-2018&amp;EndDate=31-03-2018" class="btn btn-sm ">
+                                            <i class="fa fa-file-excel-o"></i> @Locate.T("Từ chối")
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="divContainer">
+                            <table class="table table-bordered table-hover table-striped dataTable">
+                                <thead>
+                                    <tr>
+                                        <th class="center">
+                                            <label>
+                                                <input class="group-checkable" type="checkbox">
+                                                <span class="text"></span>
+                                            </label>
+                                        </th>
+                                        <th class="center">@Locate.T("STT")</th>
+                                        <th>@Locate.T("Mã biểu")</th>
+                                        <th>@Locate.T("Tên biểu")</th>
+                                        <th>@Locate.T("Nhóm chỉ tiêu")</th>
+                                        <th>@Locate.T("Chỉ tiêu")</th>
+                                        <th>@Locate.T("Thời gian xử lí")</th>
+                                        <th>@Locate.T("Trạng thái")</th>
+                                        <th>@Locate.T("Áp dụng")</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="center">
+                                            <label>
+                                                <input class="checkable" type="checkbox">
+                                                <span class="text"></span>
+                                            </label>
+                                        </td>
+                                        <td class="center">@Locate.T("1")</td>
+                                        <td>@Locate.T("01BC-BDT")</td>
+                                        <td>@Locate.T("Số lượng trường phổ thông dân tộc")</td>
+                                        <td>@Locate.T("Giáo dục")</td>
+                                        <td>@Locate.T("Số lượng trường phổ thông dân tộc")</td>
+                                        <td>@Locate.T("2014-03-05")</td>
+                                        <td><span class="label label-info">@Locate.T("Đang chờ duyệt")</span></td>
+                                        <td>@Locate.T("Áp dụng")</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

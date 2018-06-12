@@ -1,0 +1,122 @@
+﻿@using DocProUBDT.Controllers
+@model FormModel
+<div class="page-breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <a href="@Locate.Url("/home.html")"><i class="fa fa-home"></i>@Locate.T("Tổng quan")</a>
+        </li>
+        <li class="active">@ViewBag.Title</li>
+    </ul>
+</div>
+<div class="page-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget">
+                <div class="widget-header bordered-bottom bordered-yellow">
+                    <span class="widget-caption">@ViewBag.Title</span>
+                </div>
+                <div class="widget-body widget_form_table">
+                    <aside class="arrow">@Locate.T("Thông tin biểu mẫu")</aside>
+                    <form id="FrmCrForm" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+                          title="@ViewBag.Title" action="@Model.Url" class="form-horizontal  bv-form validateForm quickSubmit successOnRefresh" method="post" novalidate="novalidate">
+                        <div class="container-fluid">
+                            @{
+                                var oTarget = Target.Instance.GetById(Model.Form.IDTarget) ?? new Target();
+                                var oTargetType = TargetType.Instance.GetById(oTarget.IDTargetType) ?? new TargetType();
+                                var oCategory = Category.Instance.GetById(oTarget.IDUnit) ?? new Category();
+                            }
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-12 control-label text-align-left"><b>@Locate.T("Nhóm chỉ tiêu: ") (@oTargetType.Code) @oTargetType.Name</b></label>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-12 control-label text-align-left"><b>@Locate.T("Chỉ tiêu: ") (@oTarget.Code) @oTarget.Name</b></label>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-12 control-label text-align-left"><b>@Locate.T("Biểu: ") (@Model.Form.Code) @Model.Form.Name</b></label>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-12 control-label"><b>@Locate.T("Đơn vị tính: ") @oCategory.Name</b></label>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <table id="TblTeamsDetail" class="table table-bordered table-hover table-striped dataTable" role="grid" aria-describedby="searchable_info">
+                                        <thead>
+                                            @for (int i = 2; i <= (int)ViewBag.MaxRows; i++)
+                                            {
+                                                <tr role="row">
+                                                    @if (i == 2)
+                                                    {
+                                                        <th rowspan='@ViewBag.MaxRows' class="wpx50 center">@Locate.T("STT")</th>
+                                                        <th rowspan='@ViewBag.MaxRows' class="wauto center" style="min-width: 15%;">@Locate.T("Nội dung")</th>
+                                                    }
+                                                    @foreach (var col in Model.TableTreModels)
+                                                    {
+                                                        if (col.RowIndex == i)
+                                                        {
+                                                            <th rowspan='@col.Rowspan' colspan='@col.Colspan' class="wpx120 center">@col.Name</th>
+                                                        }
+                                                    }
+                                                </tr>
+                                            }
+                                        </thead>
+                                        <tbody>
+                                            @{int stt = 0; }
+                                            @foreach (var row in Model.ContentTargetTypes)
+                                            {
+                                             
+                                                if (row.IDType == (int)DocProUBDT.Customs.Enum.ContentTargetType.Tunhap)
+                                                {
+                                                    <tr>
+                                                        <td colspan="2"><b>@row.Name</b></td>
+                                                        @for (int i = 1; i <= Model.TableTreModels[0].Colspan; i++)
+                                                        {
+                                                            <td></td>
+                                                        }
+                                                    </tr>
+                                                    var contenTarget = ContentTarget.Instance.GetListByFieldOrDefault("IDContentTargetType", row.ID);
+                                                    var lstTree = FormController.ConvertNRenderTree(contenTarget," - - ");
+                                                    foreach (var rowChild in lstTree)
+                                                    {
+                                                        stt++;
+                                                        <tr>
+                                                            <td>@stt</td>
+                                                            <td>@rowChild.Name</td>
+                                                            @for (int i = 1; i <= Model.TableTreModels[0].Colspan; i++)
+                                                            {
+                                                                <td></td>
+                                                            }
+                                                        </tr>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    stt++;
+                                                    <tr>
+                                                        <td>@stt</td>
+                                                        <td>@row.Name</td>
+                                                       @for (int i = 1; i <= Model.TableTreModels[0].Colspan; i++)
+                                                       {
+                                                            <td></td>
+                                                        }
+                                                    </tr>
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-12 control-label text-align-left"><b>@Locate.T("Hướng dẫn nhập") </b></label>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <div class="col-lg-12">
+                                    @Html.CusTextArea("CrtDescribe", "Describe", @Model.Form.Describe, Locate.T("Ghi chú"), Locate.T("Ghi chú"), 10)
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

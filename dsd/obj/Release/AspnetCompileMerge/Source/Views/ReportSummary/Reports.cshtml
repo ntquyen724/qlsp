@@ -1,0 +1,109 @@
+﻿@model ReportModel
+
+<div class="dataTables_filter">
+    <form class="quickSearch" data-target="#divReport" action="@Locate.Url("/report-summary.html")" method="get" enctype="multipart/form-data">
+        <div class="col-md-2 col-sm-2">
+            <label>
+                @Html.DropDownList("IDUnitReport", Model.UnitReports.Select(x => new SelectListItem() { Text = x.Name, Value = x.ID.ToString(), Selected = Model.SearchParam.IDUnitReport == x.ID }).ToList(), Locate.T("--- Chọn đơn vị báo cáo ---"), new { @class = "form-control input-sm" })
+            </label>
+        </div>
+        <div class="col-md-2 col-sm-2">
+            <label>
+                @Html.DropDownList("IDTargetType", Model.TargetTypes.Select(x => new SelectListItem() { Text = x.Name, Value = x.ID.ToString(), Selected = Model.SearchParam.IDTargetType == x.ID }).ToList(), Locate.T("--- Chọn nhóm chỉ tiêu ---"), new { @class = "form-control input-sm select_change_coupon", @data_url = Locate.Url("/report-summary/TargetPicker.html"), @data_target = "#target-child", @data_url_2 = Locate.Url("/coupon/FormPicker.html"), @data_target_2 = "#form-child" })
+            </label>
+        </div>
+        <div class="col-md-2 col-sm-2">
+            <label id="target-child">
+                @Html.DropDownList("IDTarget", Model.Targets.Select(x => new SelectListItem() { Text = x.Name, Value = x.ID.ToString(), Selected = Model.SearchParam.IDTarget == x.ID }).ToList(), Locate.T("--- Chọn chỉ tiêu ---"), new { @class = "form-control input-sm select_change", @data_url = Locate.Url("/report-summary/FormPicker.html"), @data_target = "#form-child" })
+            </label>
+        </div>
+        <div class="col-md-2 col-sm-2">
+            <label id="form-child">
+                @Html.DropDownList("IDForm", Model.Forms.Select(x => new SelectListItem() { Text = x.Name, Value = x.ID.ToString(), Selected = Model.SearchParam.IDForm == x.ID }).ToList(), Locate.T("--- Chọn biểu ---"), new { @class = "form-control input-sm" })
+            </label>
+        </div>
+        <div class="col-md-2 col-sm-2">
+            <label>
+                @Html.DropDownList("IDTerm", Model.Terms.Select(x => new SelectListItem() { Text = x.Name, Value = x.ID.ToString(), Selected = (x.ID == Model.SearchParam.IDTerm) }).ToList(), Locate.T("--- Chọn kỳ báo cáo ---"), new { @class = "form-control input-sm" })
+            </label>
+        </div>
+        <div class="col-md-2 col-sm-2">
+            <label>
+                @Html.CusDropdownListPicker("IDAreas", "IDAreas", Locate.T("Chọn khu vực báo cáo"), Model.Areas.Select(x => new SelectListItem() { Text = x.Name, Value = x.ID.ToString(), Selected = (Model.SearchParam.IDAreas.Contains(x.ID)) }).ToList(), Locate.T("Chọn khu vực báo cáo"), Locate.T("---Chọn khu vực báo cáo---"))
+            </label>
+        </div>
+        <div class="col-md-4 data_btn col-sm-4">
+            <input type="hidden" name="IsSearch" value="1" />
+            <button class="btn btn-info" type="submit"><i class="glyphicon glyphicon-search"></i>@Locate.T("Thực hiện tổng hợp")</button>
+            <a title="@Locate.T("Xuất excel")" class="btn btn-sm" href="@CUtility.GenLinkExport(Locate.Url("/report-summary/export.html?"), Model.SearchParam)">
+                <i class="fa fa-file-excel-o" aria-hidden="true"></i> @Locate.T("Xuất excel")
+            </a>
+        </div>
+    </form>
+</div>
+<div class="divContainer">
+    @if (Utils.IsNotEmpty(Model.TableTreModels))
+    {
+        <div class="titleRPDT">
+            <h2>@Locate.T("Biểu 1: Chỉ tiêu về cơ cấu dân số theo nhóm tuổi")</h2>
+        </div>
+        <div>
+            <table id="TblTeamsDetail" class="table table-bordered treegridview" role="grid" aria-describedby="searchable_info">
+                <thead>
+                    @for (int i = 1; i <= (int)Model.MaxRow; i++)
+                    {
+                        <tr role="row">
+                            @if (i == 1)
+                    {
+                                <th rowspan='@Model.MaxRow' class="wauto center"></th>
+                            }
+                            @foreach (var col in Model.TableTreModels)
+                    {
+                        if (col.RowIndex == i)
+                        {
+                                    <th rowspan='@col.Rowspan' colspan='@col.Colspan' class="wpx120 center">@col.Name</th>
+                                }
+                            }
+                        </tr>
+                    }
+                </thead>
+                <tbody>
+                        @foreach (var contentTargetType in Model.ContentTargetTypes)
+                        {
+                            var contentTargets = Model.ContentTargets.Where(t => t.IDContentTargetType == contentTargetType.ID).ToList();
+                            var dic = new Dictionary<int, float>();
+                            foreach (var row in contentTargets)
+                            {
+                                foreach (var col in Model.TableTreModels)
+                                {
+                                    if(col.Colspan==1)
+                                    {
+                                        if (!dic.ContainsKey(col.Id))
+                                        {
+                                            dic.Add(col.Id, 0);
+                                        }
+                                        var item = Model.InputDetails.Find(p => p.IDProperties == col.Id && p.IDContentTarget == row.ID && p.IDType == row.IDType) ?? new InputDetail();
+                                        dic[col.Id] += item.Value;
+                                    }
+                                }
+                            }
+                            <tr class="treegrid-@contentTargetType.ID" >
+                                <td>@contentTargetType.Name</td>
+                                @foreach (var col in Model.TableTreModels)
+                                {
+                                    if (col.Colspan == 1)
+                                    {
+                                        <td>
+                                            @*@Html.CusTextBoxNumberic("id" + sName, sName, item.Value, "")*@
+                                            <label>@dic.GetValue(col.Id)</label>
+                                        </td>
+                                    }
+                                }
+                            </tr>
+                        }
+                </tbody>
+            </table>
+
+        </div>
+    }
+</div>

@@ -1,0 +1,25 @@
+﻿@model CreateProductModel
+<h1>Thêm version</h1>
+@foreach (var item in Model.VersionFileTypes)
+{
+    <div class="form-group has-feedback">
+        <label class="col-lg-4 control-label">@Locate.T(item.Value)<span class="red">*</span></label>
+        <div class="col-lg-8">
+
+            <button type="button" class="btn btn-info attachFile" data-isonly="1" data-rel="#AttachFiles" data-target="#divfile_@item.Key"
+                    data-file-name="FileName_@item.Key" data-file-path="FilePath_@item.Key">
+                <i class="glyphicon glyphicon-upload "></i> @Locate.T("Tải file")
+            </button>
+            <span id="divfile_@item.Key">
+                @if (!string.IsNullOrEmpty(Model.version.Name))
+                {
+                    <span class="fileitem member">
+                        <img class="img-thumbnail" src="@GlobalConfig.StgSrcPath(Model.Product.Logo)" title=@Model.Product.Logo><br>
+                        <input name="Avatar" class="filePaths" type="hidden" value=@Model.Product.Logo>
+                        <button type="button" class="btn btn-xs btn-link close delMember">x</button>
+                    </span>
+                }
+            </span>
+        </div>
+        </div>
+        }

@@ -1,0 +1,39 @@
+﻿@model FormModel
+<table id="TblTeamsDetail" class="table table-bordered tree">
+    <thead>
+        <tr role="row">
+            <th rowspan="2" class="wauto center" tabindex="0" aria-controls="searchable">@Locate.T("Nội dung")</th>
+            <th class="wpx120 center" tabindex="0" colspan="@Model.TargetPros.Count">
+                @ViewBag.TargetName
+            </th>
+        </tr>
+        <tr role="row">
+            @foreach (var item in Model.TargetPros)
+            {
+                <th class="wpx120 center">
+                    @item.Name
+                </th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var row in Model.ContentTargets)
+        {
+            var stringParent = row.Parent > 0 ? string.Format("treegrid-parent-{0}", row.Parent) : string.Empty;
+            <tr class="treegrid-@row.ID @stringParent">
+                <td>@row.Name</td>
+                @foreach (var col in Model.TargetPros)
+                {
+                    var item = Model.InputDetails.Find(p => p.IDProperties == col.ID && p.IDType == row.ID) ?? new InputDetail();
+                    string sName = string.Format("Name-{0}-{1}", row.ID, col.ID);
+                    <td>
+                        @Html.CusTextBoxNumberic("id" + sName, sName, item.Value, "")
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+<input type="hidden" value="@Model.IDInput" name="IDInput" />
+<input type="hidden" value="@Model.IDForm" name="IDForm" />

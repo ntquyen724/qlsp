@@ -1,0 +1,63 @@
+﻿@using DocProUBDT.Controllers
+@using DocProUBDT.Repository
+@model ContentTargetModel
+<table id="TblTeams" class="table table-bordered table-hover treegridview table-striped dataTable" role="grid" aria-describedby="searchable_info">
+    <thead>
+        <tr role="row">
+            <th class="wauto center" tabindex="0" aria-controls="searchable">@Locate.T("Nội dung")</th>
+            <th class="wpx120 center" tabindex="0" aria-controls="searchable">@Locate.T("Thao tác")</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.ContentTargets)
+        {
+            var alias = Utils.StringAlias(item.Name, item.ID);
+            var updateLink = Locate.Url("/content-target/update/{0}.html", alias);
+            var deleteLink = Locate.Url("/content-target/is-delete/{0}.html", alias);
+            var stringParent = item.Parent > 0 ? string.Format("treegrid-parent-{0}", item.Parent) : string.Empty;
+
+            <tr class="treegrid-@item.ID @stringParent">
+                <td>@item.Name</td>
+                <td>
+                    <div class="btns">
+                        <div class="btn-group ">
+                            <a href="javascript:;" data-toggle="dropdown" class="btn btn-sm btn-blue dropdown-toggle" aria-expanded="true">Biên tập <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu dropdown-blue dropdown-menu-right">
+                                <li>
+                                    <a class="edit quickUpdate" data-id="@item.ID" data-target="#FrmUpTargettype" title="@Locate.T("Sửa")" href="@updateLink">
+                                        @Locate.T("Sửa")
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="quickDelete" data-id="@item.ID" data-target=".ui-dialog:visible" title="@Locate.T("Xóa")" href="@deleteLink">
+                                        <i class=""></i> @Locate.T("Xóa")
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+<div class="row DTTTFooter">
+    @if (ViewBag.Pagination.RowCount == 0)
+    {
+        <div class="col-sm-12 text-center padt10">
+            <strong>
+                @Locate.T("Không có giá trị nào phù hợp, vui lòng thử lại")
+            </strong>
+        </div>
+    }
+    <div class="col-sm-6">
+        <div class="dataTables_info" id="searchable_info" role="status" aria-live="polite"></div>
+    </div>
+    <div class="col-sm-6">@ViewBag.Pagination.SetTarget("#divContentTarget").Render()</div>
+</div>
+<script>
+</script>

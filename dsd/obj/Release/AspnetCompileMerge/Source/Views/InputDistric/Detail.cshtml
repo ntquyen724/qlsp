@@ -1,0 +1,70 @@
+﻿@model FormModel
+<div class="page-breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <a href="@Locate.Url("/home.html")"><i class="fa fa-home"></i>@Locate.T("Tổng quan")</a>
+        </li>
+        <li>
+            <a href="@Locate.Url("/input-distric.html")"><i class="fa fa-folder"></i> @Locate.T("Phiếu nhập")</a>
+        </li>
+        <li class="active">@ViewBag.Title</li>
+    </ul>
+</div>
+<div class="page-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget">
+                <div class="widget-header bordered-bottom bordered-yellow">
+                    <span class="widget-caption">@ViewBag.Title</span>
+                </div>
+                <div class="widget-body widget_form_table">
+
+                    <table id="TblTeams" class="table table-bordered table-hover table-striped dataTable" role="grid" aria-describedby="searchable_info">
+                        <thead>
+                            <tr role="row">
+                                <th class="wpx50 center" tabindex="0">@Locate.T("STT")</th>
+                                <th class="wpx150 " tabindex="0" aria-controls="searchable">@Locate.T("Mã biểu mẫu")</th>
+                                <th class="wauto " tabindex="0" aria-controls="searchable">@Locate.T("Tên biểu mẫu")</th>
+                                <th class="wpx120 " tabindex="0">@Locate.T("Tiến độ")</th>
+                                <th class="wpx50 center" tabindex="0">@Locate.T("Nhập liệu")</th>
+                                <th class="wpx50 center" tabindex="0">@Locate.T("Xóa dữ liệu")</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Utils.IsNotEmpty<Form>(Model.Forms))
+                            {
+                                var stt = 0;
+                                foreach (var item in Model.Forms)
+                                {
+                                    stt++;
+                                    var statistic = Model.InputStatistics.FirstOrDefault(t => t.IDForm == item.ID) ?? new InputStatistic();
+                                    <tr role="row">
+                                        <td class="sorting_1 center ">@stt</td>
+                                        <td>@item.Code</td>
+                                        <td>@item.Name</td>
+                                        <td><span class="label label-info">@statistic.Done/@statistic.Total</span></td>
+                                        <td>
+                                            <form action="/input-distric/inputdetail.html?IDInputGrantReport=@Model.IDInputGrantReport&IDInputUnitReport=@Model.IDInputUnitReport&IDInputArea=@Model.IDInputArea&IDCoupon=@Model.IDCoupon&IDForm=@item.ID" method="post" enctype="multipart/form-data">
+                                                <button class="btn btn-sm btn-info" type="submit">
+                                                    <i class="fa fa-edit"></i>
+                                                    <span>@Locate.T("Biểu mẫu")</span>
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form action="@Locate.Url("/input-distric/DeleteData.html?IDCoupon={0}&IDForm={1}", Model.IDCoupon, item.ID)" method="post" enctype="multipart/form-data">
+                                                <button class="btn btn-sm btn-info" type="submit">
+                                                    <span class="hidden-search">@Locate.T("Xóa")</span>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

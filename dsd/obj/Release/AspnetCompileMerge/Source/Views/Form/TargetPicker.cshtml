@@ -1,0 +1,11 @@
+﻿@model List<Target>
+
+  @Html.CusDropdownList("IDTarget", "IDTarget", Locate.T("--- Chọn chỉ tiêu ---"), Model.Select(x => new SelectListItem() { Text = x.Name, Value = x.ID.ToString()}).ToList(), new { @class = "form-control input-sm select_change", @data_url = Locate.Url("/form/TargetProPicker.html"), @data_target = "#target-pro-child" }, @Locate.T("Chỉ tiêu"), true)
+@*<select class="form-control input-sm select_change" data-bv-field="IDTarget" data-bv-notempty="true" data-bv-notempty-message="Chỉ tiêu không được để trống" data-target="#target-pro-child" data-url="/form/TargetProPicker.html" id="IDTarget" name="IDTarget">
+     @{
+        foreach (var item in Model)
+        {
+            <option value="@item.ID">@item.Name</option>
+        }
+    }
+</select>*@

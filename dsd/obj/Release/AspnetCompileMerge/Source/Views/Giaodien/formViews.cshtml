@@ -1,0 +1,127 @@
+﻿
+<div class="page-breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="@Locate.Url("/")">@Locate.T("Tổng quan")</a>
+        </li>
+        <li>
+            <a>@Locate.T("Quản lí duyệt biểu")</a>
+        </li>
+        <li class="active">@Locate.T("Quản lí duyệt biểu")</li>
+    </ul>
+</div>
+
+<div class="page-body">
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div class="widget">
+                <div class="widget-header bordered-bottom bordered-yellow">
+                    <a class="widget_back_btn" href="#" title="Quay lại"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> <span>Quay lại</span></a><span class="widget-caption">Quản lí tạo biểu</span>
+                    <div class="widget-buttons">
+                        <a data-toggle="maximize" href="#"><i class="fa fa-expand"></i></a>
+                        <a data-toggle="collapse" href="#"><i class="fa fa-minus"></i></a>
+                        <a data-toggle="dispose" href="#"><i class="fa fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="widget-body no-padding">
+                    <div class="dataTables_wrapper form-inline">
+                        <div>
+                            <div class="viewsform" style="padding:15px">
+                                <div class="headviews">
+                                    <div class="col-md-7">
+                                        <div class="row">
+                                            <h2 style="font-size:15px;">@Locate.T("Phiếu số"):<span>@Locate.T(" 01/BC-BDT")</span></h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="row">
+                                            <p class="center">
+                                                <b>@Locate.T("Đơn vị báo cáo")</b>: <span>@Locate.T("Cơ quan công tác dân tộc cấp tỉnh")</span>
+                                            </p>
+                                            <p class="center">
+                                                <b>@Locate.T("Đơn vị nhận báo cáo")</b>: <span>@Locate.T("Ủy ban Dân tộc (Vụ Kế hoạch - Tài chính)")</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="titleViews center" style="display:block;clear:both;padding:5px 0 0 0;">
+                                    <h2 style="font-weight:bold !important; font-size:20px">@Locate.T("PHIẾU BÁO CÁO THÔNG TIN")</h2>
+                                    <p>@Locate.T("Năm"): <span>@Locate.T("2018")</span></p>
+                                </div>
+                                <div class="MainViews">
+                                    <p><b style="display:inline-block;min-width:100px">@Locate.T("Chỉ tiêu")</b>: <span>@Locate.T("Số lượng trường phổ thông dân tộc nội trú")</span></p>
+                                    <p><b style="display:inline-block;min-width:100px">@Locate.T("Mã chỉ tiêu")</b>: <span>@Locate.T("00601")</span></p>
+                                </div>
+                                <div style="margin:10px 0">
+                                    <h2 style="font-size:15px"><b style="font-weight:500!important">@Locate.T("Biểu"): @Locate.T("Số lượng trường phổ thông dân tộc nội trú")</b> <i style="float:right">(@Locate.T("Đơn vị tính: trường"))</i></h2>
+                                    <table class="table table-bordered table-hover table-striped dataTable">
+                                        <thead>
+                                            <tr>
+                                                <th>@Locate.T("Nội dung")</th>
+                                                <th>@Locate.T("Mã số")</th>
+                                                <th>@Locate.T("Số lượng")</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>@Locate.T("A")</td>
+                                                <td>@Locate.T("B")</td>
+                                                <td>@Locate.T("1")</td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Locate.T("1. Số lượng trường học")</td>
+                                                <td>@Locate.T("")</td>
+                                                <td>@Locate.T("")</td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Locate.T("a. Trường THPT nội trú")</td>
+                                                <td>@Locate.T("")</td>
+                                                <td>@Locate.T("")</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+                                    <h2 style="font-size:15px;font-weight:500 !important">@Locate.T("Lịch sử xử lý")</h2>
+                                    <table class="table table-bordered table-hover table-striped dataTable">
+                                        <thead>
+                                            <tr>
+                                                <th>@Locate.T("Người gửi")</th>
+                                                <th>@Locate.T("Tác vụ")</th>
+                                                <th>@Locate.T("Thời gian")</th>
+                                                <th>@Locate.T("Ý kiến xử lý")</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>1</td>
+                                                <td>1</td>
+                                                <td>1</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="text-right margin-top-20">
+                                    <button class="btn btn-info" type="submit">@Locate.T("Xuất Work")</button>
+                                    <button class="btn btn-info" type="submit">@Locate.T("In")</button>
+                                    <button class="btn btn-info" type="submit">@Locate.T("Đóng")</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

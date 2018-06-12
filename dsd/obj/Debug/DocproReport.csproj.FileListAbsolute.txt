@@ -1,0 +1,161 @@
+E:\.NET FSI\DocproReportJob\bin\Microsoft.Owin.dll
+E:\.NET FSI\DocproReportJob\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\.NET FSI\DocproReportJob\bin\Owin.dll
+E:\.NET FSI\DocproReportJob\bin\System.Net.Http.Formatting.dll
+E:\.NET FSI\DocproReportJob\bin\System.Web.Helpers.dll
+E:\.NET FSI\DocproReportJob\bin\System.Web.Http.dll
+E:\.NET FSI\DocproReportJob\bin\System.Web.Http.WebHost.dll
+E:\.NET FSI\DocproReportJob\bin\System.Web.Mvc.dll
+E:\.NET FSI\DocproReportJob\bin\System.Web.Razor.dll
+E:\.NET FSI\DocproReportJob\bin\System.Web.WebPages.Deployment.dll
+E:\.NET FSI\DocproReportJob\bin\System.Web.WebPages.dll
+E:\.NET FSI\DocproReportJob\bin\System.Web.WebPages.Razor.dll
+E:\.NET FSI\DocproReportJob\bin\DocumentFormat.OpenXml.dll
+E:\.NET FSI\DocproReportJob\bin\DocProSearch.dll
+E:\.NET FSI\DocproReportJob\bin\DocProProdKey.dll
+E:\.NET FSI\DocproReportJob\bin\EPPlus.dll
+E:\.NET FSI\DocproReportJob\bin\FStatistics.dll
+E:\.NET FSI\DocproReportJob\bin\ITIUtils.dll
+E:\.NET FSI\DocproReportJob\bin\CanBQ.dll
+E:\.NET FSI\DocproReportJob\bin\Nest.dll
+E:\.NET FSI\DocproReportJob\bin\Elasticsearch.Net.dll
+E:\.NET FSI\DocproReportJob\bin\Facebook.xml
+E:\.NET FSI\DocproReportJob\bin\Microsoft.Owin.xml
+E:\.NET FSI\DocproReportJob\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\.NET FSI\DocproReportJob\bin\Microsoft.Web.Infrastructure.xml
+E:\.NET FSI\DocproReportJob\bin\System.Net.Http.Formatting.xml
+E:\.NET FSI\DocproReportJob\bin\System.Web.Helpers.xml
+E:\.NET FSI\DocproReportJob\bin\System.Web.Http.xml
+E:\.NET FSI\DocproReportJob\bin\System.Web.Http.WebHost.xml
+E:\.NET FSI\DocproReportJob\bin\System.Web.Mvc.xml
+E:\.NET FSI\DocproReportJob\bin\System.Web.Optimization.xml
+E:\.NET FSI\DocproReportJob\bin\System.Web.Razor.xml
+E:\.NET FSI\DocproReportJob\bin\System.Web.WebPages.xml
+E:\.NET FSI\DocproReportJob\bin\System.Web.WebPages.Deployment.xml
+E:\.NET FSI\DocproReportJob\bin\System.Web.WebPages.Razor.xml
+E:\.NET FSI\DocproReportJob\obj\Debug\DocproReport.csproj.CoreCompileInputs.cache
+E:\.NET FSI\DocproReportJob\obj\Debug\DocproReport.csproj.CopyComplete
+E:\.NET FSI\DocproReportJob\bin\DocproReport.dll.config
+E:\.NET FSI\DocproReportJob\bin\DocproReport.dll
+E:\.NET FSI\DocproReportJob\bin\DocproReport.pdb
+E:\.NET FSI\DocproReportJob\obj\Debug\DocproReport.dll
+E:\.NET FSI\DocproReportJob\obj\Debug\DocproReport.pdb
+E:\.NET FSI\DocproReportJob\obj\Debug\DocproReport.csprojResolveAssemblyReference.cache
+E:\dsd\obj\Debug\DocproReport.csprojResolveAssemblyReference.cache
+E:\dsd\obj\Debug\DocproReport.csproj.CoreCompileInputs.cache
+E:\dsd\obj\Debug\DocproReport.dll
+E:\dsd\obj\Debug\DocproReport.pdb
+E:\dsd\bin\DocproReport.dll.config
+E:\dsd\bin\DocproReport.dll
+E:\dsd\bin\DocproReport.pdb
+E:\dsd\bin\Microsoft.Owin.dll
+E:\dsd\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\dsd\bin\Owin.dll
+E:\dsd\bin\System.Net.Http.Formatting.dll
+E:\dsd\bin\System.Web.Helpers.dll
+E:\dsd\bin\System.Web.Http.dll
+E:\dsd\bin\System.Web.Http.WebHost.dll
+E:\dsd\bin\System.Web.Mvc.dll
+E:\dsd\bin\System.Web.Razor.dll
+E:\dsd\bin\System.Web.WebPages.Deployment.dll
+E:\dsd\bin\System.Web.WebPages.dll
+E:\dsd\bin\System.Web.WebPages.Razor.dll
+E:\dsd\bin\DocumentFormat.OpenXml.dll
+E:\dsd\bin\DocProSearch.dll
+E:\dsd\bin\DocProProdKey.dll
+E:\dsd\bin\EPPlus.dll
+E:\dsd\bin\FStatistics.dll
+E:\dsd\bin\ITIUtils.dll
+E:\dsd\bin\CanBQ.dll
+E:\dsd\bin\Nest.dll
+E:\dsd\bin\Elasticsearch.Net.dll
+E:\dsd\bin\Facebook.xml
+E:\dsd\bin\Microsoft.Owin.xml
+E:\dsd\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\dsd\bin\Microsoft.Web.Infrastructure.xml
+E:\dsd\bin\System.Net.Http.Formatting.xml
+E:\dsd\bin\System.Web.Helpers.xml
+E:\dsd\bin\System.Web.Http.xml
+E:\dsd\bin\System.Web.Http.WebHost.xml
+E:\dsd\bin\System.Web.Mvc.xml
+E:\dsd\bin\System.Web.Optimization.xml
+E:\dsd\bin\System.Web.Razor.xml
+E:\dsd\bin\System.Web.WebPages.xml
+E:\dsd\bin\System.Web.WebPages.Deployment.xml
+E:\dsd\bin\System.Web.WebPages.Razor.xml
+E:\dsd\obj\Debug\DocproReport.csproj.CopyComplete
+D:\dsd\bin\DocproReport.dll.config
+D:\dsd\bin\DocproReport.dll
+D:\dsd\bin\DocproReport.pdb
+D:\dsd\bin\Microsoft.Owin.dll
+D:\dsd\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\dsd\bin\Owin.dll
+D:\dsd\bin\System.Net.Http.Formatting.dll
+D:\dsd\bin\System.Web.Helpers.dll
+D:\dsd\bin\System.Web.Http.dll
+D:\dsd\bin\System.Web.Http.WebHost.dll
+D:\dsd\bin\System.Web.Mvc.dll
+D:\dsd\bin\System.Web.Razor.dll
+D:\dsd\bin\System.Web.WebPages.Deployment.dll
+D:\dsd\bin\System.Web.WebPages.dll
+D:\dsd\bin\System.Web.WebPages.Razor.dll
+D:\dsd\bin\DocumentFormat.OpenXml.dll
+D:\dsd\bin\DocProSearch.dll
+D:\dsd\bin\DocProProdKey.dll
+D:\dsd\bin\EPPlus.dll
+D:\dsd\bin\FStatistics.dll
+D:\dsd\bin\ITIUtils.dll
+D:\dsd\bin\CanBQ.dll
+D:\dsd\bin\Nest.dll
+D:\dsd\bin\Elasticsearch.Net.dll
+D:\dsd\bin\Facebook.xml
+D:\dsd\bin\Microsoft.Owin.xml
+D:\dsd\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\dsd\bin\Microsoft.Web.Infrastructure.xml
+D:\dsd\bin\System.Net.Http.Formatting.xml
+D:\dsd\bin\System.Web.Helpers.xml
+D:\dsd\bin\System.Web.Http.xml
+D:\dsd\bin\System.Web.Http.WebHost.xml
+D:\dsd\bin\System.Web.Mvc.xml
+D:\dsd\bin\System.Web.Optimization.xml
+D:\dsd\bin\System.Web.Razor.xml
+D:\dsd\bin\System.Web.WebPages.xml
+D:\dsd\bin\System.Web.WebPages.Deployment.xml
+D:\dsd\bin\System.Web.WebPages.Razor.xml
+D:\dsd\obj\Debug\DocproReport.csprojAssemblyReference.cache
+D:\dsd\obj\Debug\DocproReport.csproj.CoreCompileInputs.cache
+D:\dsd\obj\Debug\DocproReport.csproj.CopyComplete
+D:\dsd\obj\Debug\DocproReport.dll
+D:\dsd\obj\Debug\DocproReport.pdb
+D:\code\dsd\obj\Debug\DocproReport.csproj.CoreCompileInputs.cache
+D:\code\dsd\obj\Debug\DocproReport.dll
+D:\code\dsd\obj\Debug\DocproReport.pdb
+D:\code\dsd\bin\DocproReport.dll.config
+D:\code\dsd\bin\DocproReport.dll
+D:\code\dsd\bin\DocproReport.pdb
+D:\code\dsd\bin\Microsoft.Owin.dll
+D:\code\dsd\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\code\dsd\bin\Owin.dll
+D:\code\dsd\bin\System.Net.Http.Formatting.dll
+D:\code\dsd\bin\System.Web.Helpers.dll
+D:\code\dsd\bin\System.Web.Http.dll
+D:\code\dsd\bin\System.Web.Http.WebHost.dll
+D:\code\dsd\bin\System.Web.Mvc.dll
+D:\code\dsd\bin\System.Web.Razor.dll
+D:\code\dsd\bin\System.Web.WebPages.Deployment.dll
+D:\code\dsd\bin\System.Web.WebPages.dll
+D:\code\dsd\bin\System.Web.WebPages.Razor.dll
+D:\code\dsd\bin\Microsoft.Owin.xml
+D:\code\dsd\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\code\dsd\bin\System.Net.Http.Formatting.xml
+D:\code\dsd\bin\System.Web.Helpers.xml
+D:\code\dsd\bin\System.Web.Http.xml
+D:\code\dsd\bin\System.Web.Http.WebHost.xml
+D:\code\dsd\bin\System.Web.Mvc.xml
+D:\code\dsd\bin\System.Web.Razor.xml
+D:\code\dsd\bin\System.Web.WebPages.xml
+D:\code\dsd\bin\System.Web.WebPages.Deployment.xml
+D:\code\dsd\bin\System.Web.WebPages.Razor.xml
+D:\code\dsd\obj\Debug\DocproReport.csproj.CopyComplete
+D:\code\dsd\bin\CanBQ.dll
+D:\code\dsd\obj\Debug\DocproReport.csprojAssemblyReference.cache

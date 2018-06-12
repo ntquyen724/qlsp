@@ -1,0 +1,31 @@
+﻿@model WardModel
+<form id="FrmCrArea" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+      title="@ViewBag.Title" action="@Model.Url" class="form-horizontal bv-form validateForm quickSubmit successOnRefresh" method="post" novalidate="novalidate">
+    <div class="container-fluid">
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Tên phường/xã")<span class="red">*</span></label>
+            <div class="col-lg-8">
+                @Html.CusTextBox("CrtName", "Name", @Model.Ward.Name, Locate.T("Tên phường/xã"), Locate.T("Tên phường/xã"), true, null)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Mã phường/xã")<span class="red">*</span></label>
+            <div class="col-lg-8">
+                @Html.CusTextBox("CrtCode", "Code", @Model.Ward.Code, Locate.T("Mã phường/xã"), Locate.T("Mã phường/xã"), true, null, 25)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Quận/huyện")<span class="red">*</span></label>
+            <div class="col-lg-8">
+                @Html.DropDownList("Parent", Model.Districts.Select(x => new SelectListItem() { Text = x.Name, Value = x.ID.ToString(), Selected = (x.ID == Model.Ward.Parent) }).ToList(), new { @class = "form-control input-sm autoSelect2" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-8 col-lg-offset-4">
+                <p id="messeage_err" class="red"></p>
+                <input type="hidden" value="@Model.Ward.ID" name="ID" />
+                <button type="submit" class="btn btn-info">@Locate.T("Xong")</button>
+            </div>
+        </div>
+    </div>
+</form>

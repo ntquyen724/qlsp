@@ -1,0 +1,81 @@
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\DocProUBDT.dll.config
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\DocProUBDT.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\DocProUBDT.pdb
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\System.Net.Http.Formatting.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\System.Web.Helpers.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\System.Web.Http.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\System.Web.Http.WebHost.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\System.Web.Mvc.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\System.Web.Razor.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\System.Web.WebPages.Deployment.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\System.Web.WebPages.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\System.Web.WebPages.Razor.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\DocumentFormat.OpenXml.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\System.Net.Http.Formatting.xml
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\System.Web.Helpers.xml
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\System.Web.Http.xml
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\System.Web.Http.WebHost.xml
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\System.Web.Mvc.xml
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\System.Web.Razor.xml
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\System.Web.WebPages.xml
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\System.Web.WebPages.Deployment.xml
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\System.Web.WebPages.Razor.xml
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\obj\Debug\DocProUBDT.csprojResolveAssemblyReference.cache
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\obj\Debug\DocProUBDT.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\obj\Debug\DocProUBDT.pdb
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\DocProSearch.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\DocProProdKey.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\EPPlus.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\itextsharp.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\FStatistics.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\ITIUtils.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\CanBQ.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\Nest.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\Elasticsearch.Net.dll
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\Facebook.xml
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\Microsoft.Web.Infrastructure.xml
+E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\bin\System.Web.Optimization.xml
+E:\.NET FSI\DocProUBDT\bin\DocProUBDT.dll.config
+E:\.NET FSI\DocProUBDT\bin\DocProUBDT.dll
+E:\.NET FSI\DocProUBDT\bin\DocProUBDT.pdb
+E:\.NET FSI\DocProUBDT\bin\System.Net.Http.Formatting.dll
+E:\.NET FSI\DocProUBDT\bin\System.Web.Helpers.dll
+E:\.NET FSI\DocProUBDT\bin\System.Web.Http.dll
+E:\.NET FSI\DocProUBDT\bin\System.Web.Http.WebHost.dll
+E:\.NET FSI\DocProUBDT\bin\System.Web.Mvc.dll
+E:\.NET FSI\DocProUBDT\bin\System.Web.Razor.dll
+E:\.NET FSI\DocProUBDT\bin\System.Web.WebPages.Deployment.dll
+E:\.NET FSI\DocProUBDT\bin\System.Web.WebPages.dll
+E:\.NET FSI\DocProUBDT\bin\System.Web.WebPages.Razor.dll
+E:\.NET FSI\DocProUBDT\bin\System.Net.Http.Formatting.xml
+E:\.NET FSI\DocProUBDT\bin\System.Web.Helpers.xml
+E:\.NET FSI\DocProUBDT\bin\System.Web.Http.xml
+E:\.NET FSI\DocProUBDT\bin\System.Web.Http.WebHost.xml
+E:\.NET FSI\DocProUBDT\bin\System.Web.Mvc.xml
+E:\.NET FSI\DocProUBDT\bin\System.Web.Razor.xml
+E:\.NET FSI\DocProUBDT\bin\System.Web.WebPages.xml
+E:\.NET FSI\DocProUBDT\bin\System.Web.WebPages.Deployment.xml
+E:\.NET FSI\DocProUBDT\bin\System.Web.WebPages.Razor.xml
+E:\.NET FSI\DocProUBDT\obj\Debug\DocProUBDT.csproj.CoreCompileInputs.cache
+E:\.NET FSI\DocProUBDT\obj\Debug\DocProUBDT.csproj.CopyComplete
+E:\.NET FSI\DocProUBDT\obj\Debug\DocProUBDT.dll
+E:\.NET FSI\DocProUBDT\obj\Debug\DocProUBDT.pdb
+E:\.NET FSI\DocProUBDT\bin\Microsoft.Owin.dll
+E:\.NET FSI\DocProUBDT\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\.NET FSI\DocProUBDT\bin\Owin.dll
+E:\.NET FSI\DocProUBDT\bin\Microsoft.Owin.xml
+E:\.NET FSI\DocProUBDT\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\.NET FSI\DocProUBDT\obj\Debug\DocProUBDT.csprojResolveAssemblyReference.cache
+E:\.NET FSI\DocProUBDT\bin\DocumentFormat.OpenXml.dll
+E:\.NET FSI\DocProUBDT\bin\DocProSearch.dll
+E:\.NET FSI\DocProUBDT\bin\DocProProdKey.dll
+E:\.NET FSI\DocProUBDT\bin\EPPlus.dll
+E:\.NET FSI\DocProUBDT\bin\itextsharp.dll
+E:\.NET FSI\DocProUBDT\bin\FStatistics.dll
+E:\.NET FSI\DocProUBDT\bin\ITIUtils.dll
+E:\.NET FSI\DocProUBDT\bin\CanBQ.dll
+E:\.NET FSI\DocProUBDT\bin\Nest.dll
+E:\.NET FSI\DocProUBDT\bin\Elasticsearch.Net.dll
+E:\.NET FSI\DocProUBDT\bin\Facebook.xml
+E:\.NET FSI\DocProUBDT\bin\Microsoft.Web.Infrastructure.xml
+E:\.NET FSI\DocProUBDT\bin\System.Web.Optimization.xml

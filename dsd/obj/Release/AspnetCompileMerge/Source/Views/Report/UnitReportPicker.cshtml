@@ -1,0 +1,2 @@
+﻿@model List<UnitReport>
+@Html.DropDownList("UnitReports", Model.Select(x => new SelectListItem() { Text = x.Name, Value = x.ID.ToString() }).ToList(), Locate.T("--- Chọn đơn vị báo cáo ---"), new { @class = "form-control input-sm" })

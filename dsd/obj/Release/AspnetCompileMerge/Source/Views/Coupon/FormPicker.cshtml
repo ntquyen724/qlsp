@@ -1,0 +1,2 @@
+﻿@model List<Form>
+@Html.DropDownList("IDForm", Model.Select(x => new SelectListItem() { Text = x.Name, Value = x.ID.ToString() }).ToList(), Locate.T("--- Chọn biểu ---"), new { @class = "form-control input-sm" })

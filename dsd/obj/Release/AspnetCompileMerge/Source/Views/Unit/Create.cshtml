@@ -1,0 +1,62 @@
+﻿@model UnitModel
+<form id="FrmCrArea" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+      title="@ViewBag.Title" action="@Model.Url" class="form-horizontal bv-form validateForm quickSubmit successOnRefresh CreatUnit" method="post" novalidate="novalidate">
+    <div class="container-fluid">
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Cấp đơn vị")<span class="red">*</span></label>
+            <div class="col-lg-8">
+               @Html.CusDropdownListSelect2("GrantReport", "GrantReport",Locate.T("Cấp đơn vị"),Model.GrantReport.Select(t=>new SelectListItem {Text=t.Value,Value=t.Key.ToString(),Selected=t.Key==Model.Unit.GrantReport }).ToList(),null,true,"#divUnitReport",Locate.Url("/unit/unit-report-picker.html"))
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Loại đơn vị")<span class="red">*</span></label>
+            <div class="col-lg-8">
+                @Html.CusDropdownListSelect2("UnitType", "UnitType", Locate.T("Loại đơn vị"), Model.UnitType.Select(t => new SelectListItem { Text = t.Value, Value = t.Key.ToString(), Selected = t.Key == Model.Unit.UnitType }).ToList())
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Đơn vị ngành dọc")</label>
+            <div class="col-lg-8" id="divUnitReport">
+                @Html.CusDropdownListSelect2("IDUnitReport", "IDUnitReport", Locate.T("-- Chọn đơn vị --"), Model.UnitReports.Select(t => new SelectListItem { Text = t.Name, Value = t.ID.ToString(), Selected = t.ID == Model.Unit.IDUnitReport }).ToList())
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Thuộc địa phương")<span class="red">*</span></label>
+            <div class="col-lg-8">
+                @Html.CusDropdownListSelect2("IDArea", "IDArea", Locate.T("-- Chọn địa phương --"), Model.Areas.Select(t => new SelectListItem { Text = t.Name, Value = t.ID.ToString(), Selected = t.ID == Model.Unit.IDArea }).ToList())
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Mã đơn vị")<span class="red">*</span></label>
+            <div class="col-lg-8">
+                @Html.CusTextBox("Code", "Code", @Model.Unit.Code, Locate.T("Mã đơn vị"), Locate.T("Mã đơn vị"), true, null)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Tên đơn vị")<span class="red">*</span></label>
+            <div class="col-lg-8">
+                @Html.CusTextBox("Name", "Name", @Model.Unit.Name, Locate.T("Tên đơn vị"), Locate.T("Tên đơn vị"), true, null)
+            </div>
+        </div>
+      
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Số thứ tự")<span class="red">*</span></label>
+            <div class="col-lg-8">
+                @Html.CusTextBox("Weight", "Weight", @Model.Unit.Weight, Locate.T("Số thứ tự"), Locate.T("Số thứ tự"), true, null)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Ghi chú")</label>
+            <div class="col-lg-8">
+                <textarea class="form-control" name="Descriabe" placeholder="@Locate.T("Ghi chú")">@Model.Unit.Descriabe</textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-8 col-lg-offset-4">
+                <p id="messeage_err" class="red"></p>
+                <input type="hidden" value="@Model.Unit.ID" name="ID" />
+                <button type="submit" class="btn btn-info">@Locate.T("Xong")</button>
+            </div>
+        </div>
+    </div>
+</form>

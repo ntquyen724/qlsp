@@ -1,0 +1,13 @@
+﻿@model InputModel
+<form id="FrmCrInput" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+      title="@ViewBag.Title" action="@Model.Url" class="form-horizontal bv-form validateForm quickSubmit successOnRefresh" method="post" novalidate="novalidate" data-target="#divInput">
+    <div class="container-fluid">
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-8">
+                <p id="messeage_err" class="red"></p>
+                <input type="hidden" value="@Model.Input.ID" name="ID" />
+                <button type="submit" class="btn btn-info">@Locate.T("Xong")</button>
+            </div>
+        </div>
+    </div>
+</form>

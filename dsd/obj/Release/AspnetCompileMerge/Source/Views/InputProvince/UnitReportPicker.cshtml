@@ -1,0 +1,14 @@
+﻿@model InputModel
+<div class="col-lg-2">
+    <label>
+        @Html.DropDownList("IDInputUnitReport", Model.UnitReports.Select(x => new SelectListItem() { Text = x.Name, Value = x.ID.ToString() }).ToList(), Locate.T("--- Chọn đơn vị báo cáo ---"), new { @class = "form-control input-sm" })
+    </label>
+</div>
+@if (Model.IDInputGrantReport == (int)GrantReport.DiaPhuong)
+{
+    <div class="col-lg-2">
+        <label id="unit-report-child">
+            @Html.DropDownList("IDArea", Model.Provinces.Select(x => new SelectListItem() { Text = x.Name, Value = x.ID.ToString() }).ToList(), Locate.T("--- Chọn tỉnh/thành phố---"), new { @class = "form-control input-sm" })
+        </label>
+    </div>
+}

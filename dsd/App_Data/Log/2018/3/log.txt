@@ -1,0 +1,153 @@
+
+
+[27-03-2018 10:10:29]:	System.Web.HttpCompileException (0x80004005): e:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\Views\TargetType\Create.cshtml(22): error CS1061: 'DocProUBDT.Models.UBDT.TargetType' does not contain a definition for 'Status' and no extension method 'Status' accepting a first argument of type 'DocProUBDT.Models.UBDT.TargetType' could be found (are you missing a using directive or an assembly reference?)
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at DocProUBDT.Controllers.BaseController.GetView(String viewName, Object data) in E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\Controllers\BaseController.cs:line 514
+
+
+[28-03-2018 9:28:16]:	System.Web.HttpCompileException (0x80004005): e:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\Views\Province\Create.cshtml(20): error CS1061: 'DocProUBDT.Models.UBDT.Area' does not contain a definition for 'IDArea' and no extension method 'IDArea' accepting a first argument of type 'DocProUBDT.Models.UBDT.Area' could be found (are you missing a using directive or an assembly reference?)
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at DocProUBDT.Controllers.BaseController.GetView(String viewName, Object data) in E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\Controllers\BaseController.cs:line 514
+
+
+[28-03-2018 9:31:19]:	System.Web.HttpCompileException (0x80004005): e:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\Views\District\Create.cshtml(20): error CS1061: 'DocProUBDT.Models.UBDT.Area' does not contain a definition for 'IDProvince' and no extension method 'IDProvince' accepting a first argument of type 'DocProUBDT.Models.UBDT.Area' could be found (are you missing a using directive or an assembly reference?)
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at DocProUBDT.Controllers.BaseController.GetView(String viewName, Object data) in E:\WORK\Hệ Thống DocPro\Source\DocproUBDT\DocProUBDT\Controllers\BaseController.cs:line 514
+
+
+[29-03-2018 14:8:23]:	System.IO.FileNotFoundException: Could not load file or assembly 'CanBQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+File name: 'CanBQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+   at DocProUtil.Cf.AclConfig.​⁯‪‌‪‍‌⁮‎⁯⁪⁯‭‬‬⁯​‬⁭⁮⁬‍⁯⁯⁫‮​‫⁪‭​⁬⁫​‫‎⁬‫⁫⁮‮(String , String )
+   at DocProUtil.Cf.AclConfig.‏‭⁭⁪​⁪‭⁮⁯‌‫⁪‏‪‎‭⁪‏⁫⁫‍‌⁪‎⁪‏‏‮‬⁫‪⁫‎⁬‌⁪⁮⁪⁯⁪‮()
+   at DocProUtil.Cf.AclConfig.EncodeCert()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+
+
+[29-03-2018 14:8:44]:	System.IO.FileNotFoundException: Could not load file or assembly 'CanBQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+File name: 'CanBQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+   at DocProUtil.Cf.AclConfig.​⁯‪‌‪‍‌⁮‎⁯⁪⁯‭‬‬⁯​‬⁭⁮⁬‍⁯⁯⁫‮​‫⁪‭​⁬⁫​‫‎⁬‫⁫⁮‮(String , String )
+   at DocProUtil.Cf.AclConfig.‏‭⁭⁪​⁪‭⁮⁯‌‫⁪‏‪‎‭⁪‏⁫⁫‍‌⁪‎⁪‏‏‮‬⁫‪⁫‎⁬‌⁪⁮⁪⁯⁪‮()
+   at DocProUtil.Cf.AclConfig.EncodeCert()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+
+
+[29-03-2018 14:15:50]:	System.IO.FileNotFoundException: Could not load file or assembly 'CanBQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+File name: 'CanBQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+   at DocProUtil.Cf.AclConfig.​⁯‪‌‪‍‌⁮‎⁯⁪⁯‭‬‬⁯​‬⁭⁮⁬‍⁯⁯⁫‮​‫⁪‭​⁬⁫​‫‎⁬‫⁫⁮‮(String , String )
+   at DocProUtil.Cf.AclConfig.‏‭⁭⁪​⁪‭⁮⁯‌‫⁪‏‪‎‭⁪‏⁫⁫‍‌⁪‎⁪‏‏‮‬⁫‪⁫‎⁬‌⁪⁮⁪⁯⁪‮()
+   at DocProUtil.Cf.AclConfig.EncodeCert()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+
+
+[29-03-2018 14:16:23]:	System.IO.FileNotFoundException: Could not load file or assembly 'CanBQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+File name: 'CanBQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+   at DocProUtil.Cf.AclConfig.​⁯‪‌‪‍‌⁮‎⁯⁪⁯‭‬‬⁯​‬⁭⁮⁬‍⁯⁯⁫‮​‫⁪‭​⁬⁫​‫‎⁬‫⁫⁮‮(String , String )
+   at DocProUtil.Cf.AclConfig.‏‭⁭⁪​⁪‭⁮⁯‌‫⁪‏‪‎‭⁪‏⁫⁫‍‌⁪‎⁪‏‏‮‬⁫‪⁫‎⁬‌⁪⁮⁪⁯⁪‮()
+   at DocProUtil.Cf.AclConfig.EncodeCert()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+
+
+[29-03-2018 14:17:16]:	System.IO.FileNotFoundException: Could not load file or assembly 'CanBQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+File name: 'CanBQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+   at DocProUtil.Cf.AclConfig.​⁯‪‌‪‍‌⁮‎⁯⁪⁯‭‬‬⁯​‬⁭⁮⁬‍⁯⁯⁫‮​‫⁪‭​⁬⁫​‫‎⁬‫⁫⁮‮(String , String )
+   at DocProUtil.Cf.AclConfig.‏‭⁭⁪​⁪‭⁮⁯‌‫⁪‏‪‎‭⁪‏⁫⁫‍‌⁪‎⁪‏‏‮‬⁫‪⁫‎⁬‌⁪⁮⁪⁯⁪‮()
+   at DocProUtil.Cf.AclConfig.EncodeCert()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+
+
+[29-03-2018 14:17:43]:	System.IO.FileNotFoundException: Could not load file or assembly 'CanBQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+File name: 'CanBQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+   at DocProUtil.Cf.AclConfig.​⁯‪‌‪‍‌⁮‎⁯⁪⁯‭‬‬⁯​‬⁭⁮⁬‍⁯⁯⁫‮​‫⁪‭​⁬⁫​‫‎⁬‫⁫⁮‮(String , String )
+   at DocProUtil.Cf.AclConfig.‏‭⁭⁪​⁪‭⁮⁯‌‫⁪‏‪‎‭⁪‏⁫⁫‍‌⁪‎⁪‏‏‮‬⁫‪⁫‎⁬‌⁪⁮⁪⁯⁪‮()
+   at DocProUtil.Cf.AclConfig.EncodeCert()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+
+
+[29-03-2018 14:17:51]:	System.IO.FileNotFoundException: Could not load file or assembly 'CanBQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+File name: 'CanBQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+   at DocProUtil.Cf.AclConfig.​⁯‪‌‪‍‌⁮‎⁯⁪⁯‭‬‬⁯​‬⁭⁮⁬‍⁯⁯⁫‮​‫⁪‭​⁬⁫​‫‎⁬‫⁫⁮‮(String , String )
+   at DocProUtil.Cf.AclConfig.‏‭⁭⁪​⁪‭⁮⁯‌‫⁪‏‪‎‭⁪‏⁫⁫‍‌⁪‎⁪‏‏‮‬⁫‪⁫‎⁬‌⁪⁮⁪⁯⁪‮()
+   at DocProUtil.Cf.AclConfig.EncodeCert()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+
+
+[29-03-2018 14:17:59]:	System.IO.FileNotFoundException: Could not load file or assembly 'CanBQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+File name: 'CanBQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+   at DocProUtil.Cf.AclConfig.​⁯‪‌‪‍‌⁮‎⁯⁪⁯‭‬‬⁯​‬⁭⁮⁬‍⁯⁯⁫‮​‫⁪‭​⁬⁫​‫‎⁬‫⁫⁮‮(String , String )
+   at DocProUtil.Cf.AclConfig.‏‭⁭⁪​⁪‭⁮⁯‌‫⁪‏‪‎‭⁪‏⁫⁫‍‌⁪‎⁪‏‏‮‬⁫‪⁫‎⁬‌⁪⁮⁪⁯⁪‮()
+   at DocProUtil.Cf.AclConfig.EncodeCert()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+
+
+[29-03-2018 14:18:25]:	System.IO.FileNotFoundException: Could not load file or assembly 'CanBQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+File name: 'CanBQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+   at DocProUtil.Cf.AclConfig.​⁯‪‌‪‍‌⁮‎⁯⁪⁯‭‬‬⁯​‬⁭⁮⁬‍⁯⁯⁫‮​‫⁪‭​⁬⁫​‫‎⁬‫⁫⁮‮(String , String )
+   at DocProUtil.Cf.AclConfig.‏‭⁭⁪​⁪‭⁮⁯‌‫⁪‏‪‎‭⁪‏⁫⁫‍‌⁪‎⁪‏‏‮‬⁫‪⁫‎⁬‌⁪⁮⁪⁯⁪‮()
+   at DocProUtil.Cf.AclConfig.EncodeCert()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+

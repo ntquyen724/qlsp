@@ -1,0 +1,210 @@
+﻿@model CouponModel
+<form id="FrmCrCoupon" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+      title="@ViewBag.Title" action="@Model.Url" class="form-horizontal  bv-form validateForm quickSubmit successOnRefresh" method="post" novalidate="novalidate">
+    <div class="container-fluid">
+        <aside class="arrow">@Locate.T("Thông tin chung")</aside>
+        <div class="form-group has-feedback">
+            <label class="col-lg-2 control-label">@Locate.T("Mã phiếu nhập")<span class="red">*</span></label>
+            <div class="col-lg-10">
+                @Html.CusTextBox("CrtCode", "Code", @Model.Coupon.Code, Locate.T("Mã phiếu nhập"), Locate.T("Mã phiếu nhập"), true, null, 25)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-2 control-label">@Locate.T("Tên phiếu nhập")<span class="red">*</span></label>
+            <div class="col-lg-10">
+                @Html.CusTextBox("CrtName", "Name", @Model.Coupon.Name, Locate.T("Tên phiếu nhập"), Locate.T("Tên phiếu nhập"), true, null, 250)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-2 control-label">@Locate.T("Cấp báo cáo")</label>
+            <div class="col-lg-10">
+                @Html.DropDownList("IDLevel", Utils.GetDescribes<DocProUBDT.Customs.Enum.DataLevel>().Select(x => new SelectListItem() { Text = x.Value, Value = x.Key.ToString(), Selected = (x.Key == Model.Coupon.IDLevel) }).ToList(), new { @class = "form-control input-sm" })
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-2 control-label">@Locate.T("Kỳ báo cáo")</label>
+            <div class="col-lg-10">
+                @Html.DropDownList("IDTerm", Model.Terms.Select(x => new SelectListItem() { Text = x.Name, Value = x.ID.ToString(), Selected = (x.ID == Model.Coupon.IDTerm) }).ToList(), Locate.T("--- Chọn kỳ báo cáo ---"), new { @class = "form-control input-sm" })
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-2 control-label">@Locate.T("Ghi chú")</label>
+            <div class="col-lg-10">
+                @Html.CusTextArea("CrtDescribe", "Describe", @Model.Coupon.Describe, Locate.T("Ghi chú"), Locate.T("Ghi chú"), 4)
+            </div>
+        </div>
+
+        <aside class="arrow">@Locate.T("Đơn vị báo cáo")</aside>
+        <div class="form-group has-feedback">
+            @*<label class="col-lg-2 control-label">@Locate.T("Cấp báo cáo")<span class="red">*</span></label>
+            <div class="col-lg-4">
+                @Html.DropDownList("GrantReport",new List<SelectListItem> { new SelectListItem { Text=Locate.T("Địa phương"),Value=Utils.GetDescribe<GrantReport>( GrantReport.DiaPhuong)} }, Locate.T("--- Cấp đơn vị ---"), new { @class = "form-control input-sm select_change", @data_url = Locate.Url("/coupon/UnitReportPicker.html"), @data_target = "#unit-report-child" })
+            </div>*@
+            <label class="col-lg-2 control-label">@Locate.T("Đơn vị báo cáo")</label>
+            <div class="col-lg-4" id="unit-report-child">
+                @Html.DropDownList("UnitReports", Model.UnitReports.Select(x => new SelectListItem() { Text = x.Name, Value = x.ID.ToString() }).ToList(), Locate.T("--- Chọn đơn vị báo cáo ---"), new { @class = "form-control input-sm" })
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <div class="col-lg-offset-2 col-lg-10">
+                <div class="btn-group">
+                    <a title="@Locate.T("Thêm đơn vị báo cáo")" data-target="#TblUnitReport"
+                       class="btn btn-labeled btn-palegreen addRowTableUnitReport" data-teamplate="#TmpTblUnitReport" data-col-1="#GrantReport" data-col-2="#UnitReports">
+                        <i class="btn-label glyphicon glyphicon-plus"></i> @Locate.T("Thêm đơn vị báo cáo")
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <div class="col-lg-12">
+                <table id="TblUnitReport" class="table table-bordered table-hover table-striped dataTable" role="grid" aria-describedby="searchable_info">
+                    <thead>
+                        <tr role="row">
+                            <th class="wpx50 center" tabindex="0">@Locate.T("Stt")</th>
+                            <th class="wauto center" tabindex="1" aria-controls="searchable">@Locate.T("Đơn vị báo cáo")</th>
+                            <th class="wpx200 center" tabindex="2" aria-controls="searchable">@Locate.T("Cấp đơn vị")</th>
+                            <th class="wpx20 center"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            var stt = 0;
+                            foreach (var item in Model.UnitReportInList)
+                            {
+                                stt++;
+                                <tr role="row">
+                                    <td class="sorting_1 center">@stt </td>
+                                    <td>@item.Name</td>
+                                    <td>@(Utils.GetDescribe<DocProUBDT.Customs.Enum.GrantReport>((DocProUBDT.Customs.Enum.GrantReport)item.GrantReport))</td>
+                                    <td>
+                                        <input name="IDReturnUnitReport" value="@item.ID" type="hidden" />
+                                        <button class="btn btn-danger btn-xs tableGenTrash" data-target="#TblUnitReport" title="@Locate.T("Xóa")">
+                                            <i class="fa fa-trash-o"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <aside class="arrow hidden">@Locate.T("Giới hạn Tỉnh thành")</aside>
+        <div class="form-group has-feedback hidden">
+            <label class="col-lg-2 control-label">@Locate.T("Tỉnh thành")</label>
+            <div class="col-lg-10" id="target-pro-child">
+                <select name="IDAreas" multiple class="selectpicker show-tick form-group" title="@Locate.T("Chọn tỉnh thành")" data-size="5" data-container="body" data-width="100%">
+                    @if (Utils.IsNotEmpty<Area>(Model.Areas))
+                    {
+                        foreach (var item in Model.Areas)
+                        {
+                            <option @(Model.IDAreas.Contains("," + item.ID + ",")||Model.Coupon.ID==0 ? "selected" : "") value="@item.ID">@item.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+        <aside class="arrow">@Locate.T("Biểu báo cáo")</aside>
+        <div class="form-group has-feedback">
+            <label class="col-lg-2 control-label">@Locate.T("Nhóm chỉ tiêu")</label>
+            <div class="col-lg-10">
+                @Html.DropDownList("IDTargetType", Model.TargetTypes.Select(x => new SelectListItem() { Text = x.Name, Value = x.ID.ToString() }).ToList(), Locate.T("--- Chọn nhóm chỉ tiêu ---"), new { @class = "form-control input-sm select_change_coupon", @data_url = Locate.Url("/coupon/TargetPicker.html"), @data_target = "#target-child", @data_url_2 = Locate.Url("/coupon/FormPicker.html"), @data_target_2 = "#form-child" })
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-2 control-label">@Locate.T("Chỉ tiêu")</label>
+            <div class="col-lg-10" id="target-child">
+                @Html.DropDownList("IDTarget", Model.Targets.Select(x => new SelectListItem() { Text = x.Name, Value = x.ID.ToString() }).ToList(), Locate.T("--- Chọn chỉ tiêu ---"), new { @class = "form-control input-sm select_change", @data_url = Locate.Url("/coupon/FormPicker.html"), @data_target = "#form-child" })
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-2 control-label">@Locate.T("Biểu báo cáo")</label>
+            <div class="col-lg-10" id="form-child">
+                @Html.DropDownList("IDForm", Model.Forms.Select(x => new SelectListItem() { Text = x.Name, Value = x.ID.ToString() }).ToList(), Locate.T("--- Chọn biểu ---"), new { @class = "form-control input-sm" })
+            </div>
+        </div>
+        
+        <div class="form-group has-feedback">
+            <div class="col-lg-offset-2 col-lg-10">
+                <div class="btn-group">
+                    <a title="@Locate.T("Thêm biểu")" data-target="#TblFormReport"
+                       class="btn btn-labeled btn-palegreen addRowTableForm" data-teamplate="#TmpTblFormReport" data-col-1="#IDTargetType" data-col-2="#IDTarget" data-col-0="#IDForm">
+                        <i class="btn-label glyphicon glyphicon-plus"></i> @Locate.T("Thêm biểu")
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <div class="col-lg-12">
+                <table id="TblFormReport" class="table table-bordered table-hover table-striped dataTable" role="grid" aria-describedby="searchable_info">
+                    <thead>
+                        <tr role="row">
+                            <th class="wauto center" tabindex="0">@Locate.T("Tên biểu")</th>
+                            <th class="wpx200 center" tabindex="1" aria-controls="searchable">@Locate.T("Nhóm chỉ tiêu")</th>
+                            <th class="wpx150 center" tabindex="2" aria-controls="searchable">@Locate.T("Chỉ tiêu")</th>
+                            <th class="wpx20 center"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            stt = 0;
+                            foreach (var item in Model.CouponFormInList)
+                            {
+                                stt++;
+                                var oForm = DocProUBDT.Repository.FormRepository.Instance.GetById(item.IDForm) ?? new DocProUBDT.Models.UBDT.Form();
+                                var oTargetType = DocProUBDT.Repository.TargetTypeRepository.Instance.GetById(oForm.IDTargetType) ?? new DocProUBDT.Models.UBDT.TargetType();
+                                var oTarget = DocProUBDT.Repository.TargetRepository.Instance.GetById(oForm.IDTarget) ?? new DocProUBDT.Models.UBDT.Target();
+
+                                <tr role="row">
+                                    <td>@oForm.Name</td>
+                                    <td>@oTargetType.Name</td>
+                                    <td>@oTarget.Name</td>
+                                    <td>
+                                        <input name="IDReturnForm" value="@item.IDForm" type="hidden" />
+                                        <button class="btn btn-danger btn-xs tableGenTrash" data-target="#TblUnitReport" title="@Locate.T("Xóa")">
+                                            <i class="fa fa-trash-o"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-8">
+                <p id="messeage_err" class="red"></p>
+                <input type="hidden" value="@Model.Coupon.ID" name="ID" />
+                <button type="submit" class="btn btn-info">@Locate.T("Xong")</button>
+            </div>
+        </div>
+    </div>
+    <script id="TmpTblUnitReport" type="text/html">
+        <tr role="row" class="tr_append">
+            <td class="sorting_1 center" id="sttUnitReport"></td>
+            <td ><span id="nUnitReport"></span></td>
+            <td ><span id="nGrantReport"></span></td>
+            <td>
+                <input class="idReturnUnitReport" name="IDReturnUnitReport" value="0" type="hidden" />
+                <button class="btn btn-danger btn-xs tableGenTrash" data-target="#TblUnitReport" title="@Locate.T("Xóa")">
+                    <i class="fa fa-trash-o"></i>
+                </button>
+            </td>
+        </tr>
+    </script>
+    <script id="TmpTblFormReport" type="text/html">
+        <tr role="row" class="tr_append">
+            <td class="sorting_1 center"></td>
+            <td></td>
+            <td></td>
+            <td>
+                <input name="IDReturnForm" value="0" type="hidden" />
+                <button class="btn btn-danger btn-xs tableGenTrash" data-target="#TblUnitReport" title="@Locate.T("Xóa")">
+                    <i class="fa fa-trash-o"></i>
+                </button>
+            </td>
+        </tr>
+    </script>
+</form>

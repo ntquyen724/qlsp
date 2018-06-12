@@ -1,0 +1,108 @@
+﻿@using DocProModel.Repository
+@model LegalTextModel
+<table id="TblTeams" class="table table-bordered table-hover table-striped dataTable" role="grid" aria-describedby="searchable_info">
+    <thead>
+        <tr role="row">
+            <th class="wpx50 center" tabindex="0">@Locate.T("STT")</th>
+            <th class="wpx50 center" tabindex="0">
+                <label>
+                    <input class="group-checkable" type="checkbox" />
+                    <span class="text"></span>
+                </label>
+            </th>
+            <th class="wauto center" aria-controls="searchable">@Locate.T("Số hiệu văn bản")</th>
+            <th class="wauto center" aria-controls="searchable">@Locate.T("Tên văn bản")</th>
+            <th class="wauto center" aria-controls="searchable">@Locate.T("Trích yếu")</th>
+            <th class="wauto center" aria-controls="searchable">@Locate.T("File đính kèm")</th>
+            <th class="wauto center" aria-controls="searchable">@Locate.T("Ngày cập nhật")</th>
+            <th class="wauto center" aria-controls="searchable">@Locate.T("Người cập nhật")</th>
+            <th class="wpx120 center" aria-controls="searchable">@Locate.T("Sửa")</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.LegalTexts.IsNotEmpty())
+        {
+            var stt = ViewBag.Pagination.RowStart;
+            foreach (var item in Model.LegalTexts)
+            {
+                stt++;
+                var alias = Utils.StringAlias(item.Name, item.ID);
+                var updateLink = Locate.Url("/legal-text/update/{0}.html", alias);
+                var deleteLink = Locate.Url("/legal-text/is-delete/{0}.html", alias);
+                var user = Model.Users.FirstOrDefault(n => n.ID == item.UpdatedBy) ?? new User();
+                var legalTextFiles = Model.LegalTextFiles.Where(n => n.IDLegalText == item.ID);
+              
+                <tr role="row">
+                    <td class="sorting_1 center ">@stt</td>
+                    <td class="sorting_1 center">
+                        <label>
+                            <input data-id="@item.ID" class="checkboxes" type="checkbox" />
+                            <span class="text"></span>
+                        </label>
+                    </td>
+                    <td>@item.Code</td>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td style="max-width: 200px;">
+                        @foreach (var fileItem in legalTextFiles)
+                        {
+                            var subFileName = fileItem.FileName.Length <= 20 ? fileItem.FileName :fileItem.FileName.Substring(0, 20) + "...";
+                            <span class="btn btn-xs margin-top-5">
+                                <a title="@Locate.T("Xem file {0}", fileItem.FileName)" target="_blank" href="@GlobalConfig.StgSrcPath(fileItem.Path)">
+                                    <span class="fileNames">@subFileName</span>
+                                </a>
+                            </span>
+                        }
+                    </td>
+                    <td>@Utils.DateDisplay(item.Updated)</td>
+                    <td>@user.Name</td>
+                    <td>
+                        <div class="btns">
+                            <div class="btn-group ">
+                                <a href="javascript:;" data-toggle="dropdown" class="btn btn-sm btn-blue dropdown-toggle" aria-expanded="true">Biên tập <i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu dropdown-blue dropdown-menu-right">
+                                    <li>
+                                        <a class="edit quickUpdate" data-id="@item.ID" data-target="#FrmUpContentTargetType" title="@Locate.T("Sửa")" href="@updateLink">
+                                            @Locate.T("Sửa")
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="quickDelete" data-id="@item.ID" data-target=".ui-dialog:visible" title="@Locate.T("Xóa")" href="@deleteLink">
+                                            <i class=""></i> @Locate.T("Xóa")
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<div class="row DTTTFooter">
+    @if (ViewBag.Pagination.RowCount == 0)
+    {
+        <div class="dataTables_info col-sm-12 text-center padt10">
+            <strong class="gray">
+                @Locate.T("Không có văn bản pháp luật nào phù hợp, vui lòng thử lại")
+            </strong>
+        </div>
+    }
+    else
+    {
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="dataTables_info text-center" id="searchable_info" role="status" aria-live="polite">
+                <div>
+                    <strong class="gray">
+                        @Locate.T("Có tổng số {0} văn bản pháp luật", ViewBag.Pagination.RowCount)
+                    </strong>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="col-sm-4">@ViewBag.Pagination.SetTarget("#divLegalText").Render()</div>
+</div>

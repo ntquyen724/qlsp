@@ -1,0 +1,114 @@
+﻿@model FormModel
+<table id="TblTeams" class="table table-bordered table-hover table-striped dataTable" role="grid" aria-describedby="searchable_info">
+    <thead>
+        <tr role="row">
+            <th class="wpx50 center" tabindex="0">@Locate.T("STT")</th>
+            <th class="wpx50 center" tabindex="0">
+                <label>
+                    <input class="group-checkable" type="checkbox" />
+                    <span class="text"></span>
+                </label>
+            </th>
+            <th class="wpx120" tabindex="0" aria-controls="searchable">@Locate.T("Mã biểu mẫu")</th>
+            <th class="wauto" tabindex="0" aria-controls="searchable">@Locate.T("Tên biểu mẫu")</th>
+            <th class="wpx150" tabindex="0" aria-controls="searchable">@Locate.T("Nhóm chỉ tiêu")</th>
+            <th class="wpx120" tabindex="0" aria-controls="searchable">@Locate.T("Chỉ tiêu")</th>
+            <th class="wpx120" tabindex="0" aria-controls="searchable">@Locate.T("Trạng thái")</th>
+            <th class="wpx120 center" tabindex="0" aria-controls="searchable">@Locate.T("Thao tác")</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Utils.IsNotEmpty<Form>(Model.Forms))
+        {
+            var stt = ViewBag.Pagination.RowStart;
+            foreach (var item in Model.Forms)
+            {
+                stt++;
+                var alias = Utils.StringAlias(item.Name, item.ID);
+                var viewLink = Locate.Url("/form/{0}.html", alias);
+                var detailLink = Locate.Url("/form/detail/{0}.html", alias);
+                var updateLink = Locate.Url("/form/update/{0}.html", alias);
+                var insertLink = Locate.Url("/form/create/{0}.html", alias);
+                var deleteLink = Locate.Url("/form/is-delete/{0}.html", alias);
+                var approvedLink = Locate.Url("/form/is-comfirm/{0}.html", alias);
+                var rejectLink = Locate.Url("/form/is-reject/{0}.html", alias);
+                var oTargetType = Model.TargetTypes.FirstOrDefault(t => t.ID == item.IDTargetType) ?? new TargetType();
+                var oTarget = Model.Targets.FirstOrDefault(t => t.ID == item.IDTarget) ?? new Target();
+                <tr role="row">
+                    <td class="sorting_1 center ">@stt</td>
+                    <td class="sorting_1 center">
+                        <label>
+                            <input data-id="@item.ID" class="checkboxes" type="checkbox" />
+                            <span class="text"></span>
+                        </label>
+                    </td>
+                    <td>@item.Code</td>
+                    <td>@item.Name</td>
+                    <td>@oTargetType.Name</td>
+                    <td>@oTarget.Name</td>
+                    <td>@CUtility.RenderFormStatus(item.Status)</td>
+                    <td class="center">
+
+
+                        <div class="btns">
+                            <div class="btn-group ">
+                                <a href="javascript:;" data-toggle="dropdown" class="btn btn-sm btn-blue dropdown-toggle" aria-expanded="true">Biên tập <i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu dropdown-blue dropdown-menu-right">
+                                    <li>
+                                        <a class="" data-id="@item.ID" title="@Locate.T("Xem")" href="@detailLink">
+                                            @Locate.T("Xem")
+                                        </a>
+                                    </li>
+                                    @if (item.Status == (int)DocProUBDT.Customs.Enum.FormStatus.Nhap || item.Status == (int)DocProUBDT.Customs.Enum.FormStatus.TuChoiDuyet)
+                                    {
+                                        <li>
+                                            <a class="edit quickUpdate" data-id="@item.ID" data-target="#FrmUpForm" title="@Locate.T("Sửa")" href="@updateLink">
+                                                @Locate.T("Sửa")
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="quickDelete" data-id="@item.ID" data-target=".ui-dialog:visible" title="@Locate.T("Xóa")" href="@deleteLink">
+                                                <i class=""></i> @Locate.T("Xóa")
+                                            </a>
+                                        </li>
+                                    }
+                                    @if (item.Status == (int)DocProUBDT.Customs.Enum.FormStatus.Nhap || item.Status == (int)DocProUBDT.Customs.Enum.FormStatus.TuChoiDuyet)
+                                    {
+                                        <li>
+                                            <a class="quickUpdate" data-id="@item.ID" data-target=".ui-dialog:visible" title="@Locate.T("Gửi duyệt")" href="@approvedLink">
+                                                <i class=""></i> @Locate.T("Gửi duyệt")
+                                            </a>
+                                        </li>
+                                    }
+                                    @if (item.Status == (int)DocProUBDT.Customs.Enum.FormStatus.ChoDuyet)
+                                    {
+                                        <li>
+                                            <a class="quickUpdate" data-id="@item.ID" data-target=".ui-dialog:visible" title="@Locate.T("Nháp")" href="@rejectLink">
+                                                <i class=""></i> @Locate.T("Nháp")
+                                            </a>
+                                        </li>
+                                    }
+
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<div class="row DTTTFooter">
+    @if (ViewBag.Pagination.RowCount == 0)
+    {
+        <div class="col-sm-12 text-center padt10">
+            <strong>
+                @Locate.T("Không có giá trị nào phù hợp, vui lòng thử lại")
+            </strong>
+        </div>
+    }
+    <div class="col-sm-6">
+        <div class="dataTables_info" id="searchable_info" role="status" aria-live="polite"></div>
+    </div>
+    <div class="col-sm-6">@ViewBag.Pagination.SetTarget("#divForm").Render()</div>
+</div>

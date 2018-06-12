@@ -1,0 +1,93 @@
+﻿@model CouponModel
+<table id="TblTeams" class="table table-bordered table-hover table-striped dataTable" role="grid" aria-describedby="searchable_info">
+    <thead>
+        <tr role="row">
+            <th class="wpx50 center" tabindex="0">@Locate.T("STT")</th>
+            <th class="wpx50 center" tabindex="0">
+                <label>
+                    <input class="group-checkable" type="checkbox" />
+                    <span class="text"></span>
+                </label>
+            </th>
+            <th class="wauto" tabindex="0" aria-controls="searchable">@Locate.T("Phiếu")</th>
+            <th class="wpx120" tabindex="0" aria-controls="searchable">@Locate.T("Đơn vị")</th>
+            <th class="wpx120" tabindex="0" aria-controls="searchable">@Locate.T("Cấp phiếu nhập")</th>
+            <th class="wpx120" tabindex="0" aria-controls="searchable">@Locate.T("Trạng thái")</th>
+            <th class="wpx120" tabindex="0" aria-controls="searchable">@Locate.T("Thao tác")</th>
+            <th class="wpx120" tabindex="0" aria-controls="searchable">@Locate.T("Xóa dữ liệu")</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Utils.IsNotEmpty<Coupon>(Model.Coupons))
+        {
+            var stt = ViewBag.Pagination.RowStart;
+            foreach (var item in Model.Coupons)
+            {
+                stt++;
+                var alias = Utils.StringAlias(item.Name, item.ID);
+                var approvedLink = Locate.Url("/coupon-approved/is-comfirm/{0}.html", alias);
+                var rejectLink = Locate.Url("/coupon-approved/is-reject/{0}.html", alias);
+                var deleteDataLink = Locate.Url("/coupon/is-delete-data/{0}.html", alias);
+                var unitReportInList = DocProUBDT.Repository.UnitReportRepository.GetByCoupon(0, item.ID);
+                <tr role="row">
+                    <td class="sorting_1 center ">@stt</td>
+                    <td class="sorting_1 center">
+                        <label>
+                            <input data-id="@item.ID" class="checkboxes" type="checkbox" />
+                            <span class="text"></span>
+                        </label>
+                    </td>
+                    <td>
+                        <span class="clearfix" title="@Locate.T("Mã phiếu")">
+                            @Locate.T("Mã phiếu") : @item.Code
+                        </span>
+                        @item.Name
+                    </td>
+                    <td>
+                        @foreach (var unit in unitReportInList)
+                        {
+                            @unit.Name <br />
+                        }
+                    </td>
+                    <td>@(Utils.GetDescribe<DocProUBDT.Customs.Enum.DataLevel>((DocProUBDT.Customs.Enum.DataLevel)item.IDLevel))</td>
+                    <td>@CUtility.RenderCouponStatus(item.Status)</td>
+                    <td>
+                        @if (item.Status == (int)DocProUBDT.Customs.Enum.CouponStatus.ChoDuyet || item.Status == (int)DocProUBDT.Customs.Enum.CouponStatus.TuChoiDuyet)
+                        {
+                            <a class="btn btn-sm btn-blue quickUpdate" data-id="@item.ID" data-target=".ui-dialog:visible" title="@Locate.T("Duyệt")" href="@approvedLink">
+                                <i class=""></i> @Locate.T("Duyệt")
+                            </a>
+                        }
+                        @if (item.Status == (int)DocProUBDT.Customs.Enum.CouponStatus.Duyet || item.Status == (int)DocProUBDT.Customs.Enum.CouponStatus.ChoDuyet)
+                        {
+                            <a class="btn btn-sm btn-blue quickUpdate" data-id="@item.ID" data-target=".ui-dialog:visible" title="@Locate.T("Từ chối")" href="@rejectLink">
+                                <i class=""></i> @Locate.T("Từ chối")
+                            </a>
+                        }
+                    </td>
+                    <td>
+                        <form action="@Locate.Url("/coupon-approved/DeleteData.html?IDCoupon={0}", item.ID)" method="post" enctype="multipart/form-data">
+                            <button class="btn btn-info" type="submit">
+                                <span class="hidden-search">@Locate.T("Xóa")</span>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<div class="row DTTTFooter">
+    @if (ViewBag.Pagination.RowCount == 0)
+    {
+        <div class="col-sm-12 text-center padt10">
+            <strong>
+                @Locate.T("Không có giá trị nào phù hợp, vui lòng thử lại")
+            </strong>
+        </div>
+    }
+    <div class="col-sm-6">
+        <div class="dataTables_info" id="searchable_info" role="status" aria-live="polite"></div>
+    </div>
+    <div class="col-sm-6">@ViewBag.Pagination.SetTarget("#divCoupon").Render()</div>
+</div>

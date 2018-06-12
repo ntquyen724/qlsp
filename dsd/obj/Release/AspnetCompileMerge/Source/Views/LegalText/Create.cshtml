@@ -1,0 +1,86 @@
+﻿@model LegalTextModel
+<form id="FrmCrLegalText" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+      title="@ViewBag.Title" action="@Model.Url" class="form-horizontal  bv-form validateForm quickSubmit successOnRefresh" method="post" novalidate="novalidate">
+    <button type="submit" class="bv-hidden-submit" style="display: none; width: 0; height: 0;"></button>
+    <div class="container-fluid">
+        <div class="form-group has-feedback">
+            <label class="col-lg-3 control-label">@Locate.T("Số hiệu văn bản")</label>
+            <div class="col-lg-8">
+                @Html.CusTextBox("CrtCode", "Code", @Model.LegalText.Code, Locate.T("Số hiệu văn bản"), Locate.T("Số hiệu văn bản"), true, null, 250)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-3 control-label">@Locate.T("Tên văn bản")</label>
+            <div class="col-lg-8">
+                @Html.CusTextBox("CrtName", "Name", @Model.LegalText.Name, Locate.T("Tên văn bản"), Locate.T("Tên văn bản"), true, null, 250)
+            </div>
+        </div>
+
+        <div class="form-group has-feedback">
+            <label class="col-lg-3 control-label">@Locate.T("Trích yếu")</label>
+            <div class="col-lg-8">
+                @Html.CusTextArea("CrtDescription", "Description", @Model.LegalText.Description, Locate.T("Trích yếu"), null, 5)
+            </div>
+        </div>
+
+        <div class="form-group has-feedback">
+            <label class="col-lg-3 control-label">@Locate.T("Ngày ban hành")</label>
+            <div class="col-lg-8">
+                @Html.CusTextBoxDate("CrtIssueDate", "IssueDate", Utils.DateDisplay(Model.LegalText.IssueDate), Locate.T("Ngày ban hành"), Locate.T("Ngày ban hành"), true)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-3 control-label">@Locate.T("Ngày hết hiệu lực")</label>
+            <div class="col-lg-8">
+                @Html.CusTextBoxDate("CrtExpiryDate", "ExpiryDate", Utils.DateDisplay(Model.LegalText.ExpiryDate), Locate.T("Ngày hết hiệu lực"), Locate.T("Ngày hết hiệu lực"), true)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-3 control-label">@Locate.T("File đính kèm")</label>
+            <div class="col-lg-8">
+                <div class="form-group">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <div>
+                                    <div class="attachFile_section">
+                                        <button type="button" class="btn btn-info attachFile" data-rel="#AttachFiles" data-target="#CrProjectFormFile"
+                                                data-file-name="FileName" data-file-path="Path">
+                                            <i class="glyphicon glyphicon-upload "></i> @Locate.T("Tải file")
+                                        </button>
+                                        <div style="max-height: 150px; overflow: auto;">
+                                            <span id="CrProjectFormFile">
+                                                @{
+                                                    if (Model.LegalTextFiles.IsNotEmpty())
+                                                    {
+                                                        foreach (var fileItem in Model.LegalTextFiles)
+                                                        {
+                                                            <span class="fileitem member list-group-item margin-top-5" style="padding: 5px 15px">
+                                                                <a title="@Locate.T("Xem file")" target="_blank" href="@GlobalConfig.StgSrcPath(fileItem.Path)">
+                                                                    <span class="fileNames">@fileItem.FileName</span>
+                                                                </a>
+                                                                <input class="filePaths" type="hidden" value="@fileItem.Path">
+                                                                <button type="button" class="btn btn-xs btn-link close delMember" style="top: 0; right: 5px">x</button>
+                                                            </span>
+                                                        }
+                                                    }
+                                                }
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+          <div class="form-group">
+        <div class="col-lg-offset-4 col-lg-8">
+            <input type="hidden" name="ID" value="@Model.LegalText.ID" />
+            <button type="submit" class="btn btn-sm btn-primary">Lưu</button>
+        </div>
+    </div>
+    </div>
+  
+</form>

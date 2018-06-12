@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Views/Shared/Blocks/Login.cshtml" hash="33d6add4" filehash="cb2873d8cda" flags="110000" assembly="App_Web_ztrgczrw" type="ASP._Page_Views_Shared_Blocks_Login_cshtml">
+    <filedeps>
+        <filedep name="/Views/Shared/Blocks/Login.cshtml" />
+    </filedeps>
+</preserve>

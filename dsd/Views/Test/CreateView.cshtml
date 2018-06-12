@@ -1,0 +1,64 @@
+﻿@model UserModel
+<script src="~/Assets/app/js/index.js"></script>
+<form id="FrmCrArea" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+      title="@ViewBag.Title" action="@Model.Url" class="form-horizontal bv-form validateForm quickSubmit successOnRefresh" method="post" novalidate="novalidate">
+    <div class="container-fluid">
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Tên Tài khoản")<span class="red">*</span></label>
+            <div class="col-lg-8">
+                @Html.CusTextBox("CrtName", "Name", @Model.User.Name, Locate.T("Tên tài khoản"), Locate.T("Tên tài khoản"), true, null)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Địa chỉ")<span class="red">*</span></label>
+            <div class="col-lg-8">
+                @Html.CusTextBox("CtrAddress", "Address", @Model.User.Address, Locate.T("Địa chỉ"), Locate.T("Địa chỉ"), true, null, 25)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Số điện thoại")<span class="red">*</span></label>
+            <div class="col-lg-8">
+                @Html.CusTextBoxPhone("CtrPhone", "Phone", @Model.User.Phone, Locate.T("Số điện thoại"), Locate.T("Số điện thoại"), true, null, "VI")
+            </div>
+        </div>
+        @{
+            var HtmlText = "____________@__________";
+        }
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Nhập Email")<span class="red">*</span></label>
+            <div class="col-lg-8">
+                <form>
+                    <input id="email"
+                           type="tel"
+                           name="phone"
+                           value="@HtmlText"
+                           pattern="" onkeydown="TabExample()" style="width:  100%;" required>
+                   
+                </form>
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Nhập Email")<span class="red">*</span></label>
+            <div class="col-lg-8">
+                <form>
+                    <input id="email"
+                           type="tel"
+                           name="phone"
+                           value="@HtmlText"
+                           pattern="" onkeydown="TabExample()" required >
+                   
+                </form>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-8 col-lg-offset-4">
+                <p id="messeage_err" class="red"></p>
+                <input type="hidden" value="@Model.User.ID" name="ID" />
+                <button type="submit" class="btn btn-info">@Locate.T("Xong")</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+

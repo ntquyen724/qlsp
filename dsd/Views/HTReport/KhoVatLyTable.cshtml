@@ -1,0 +1,126 @@
+﻿@model KhoVatLyModelView
+<form data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+      title="@ViewBag.Title" action="@Model.Url" class="form-horizontal bv-form validateForm quickSubmitt successOnRefresh" method="post" novalidate="novalidate">
+    <div class="container-fluid">
+        <table class="table table-bordered table-hover table-striped dataTable">
+            <thead>
+                <tr>
+                    <th class="wpx50 text-center">@Locate.T("STT")</th>
+                    <th class="wpx100 text-center">@Locate.T("Mã kệ")</th>
+                    <th class="text-center">@Locate.T("Tên kệ")</th>
+                    <th class="wpx130 text-center">@Locate.T("Tủ")</th>
+                    <th class="wpx130 text-center">@Locate.T("Dãy")</th>
+                    <th class="wpx100 text-center">@Locate.T("Kích thước")</th>
+                    <th class="wpx100 text-center">@Locate.T("Đã sử dụng")</th>
+                    <th class="wpx100 text-center">@Locate.T("Còn trống")</th>
+                    <th class="wpx150 text-center">@Locate.T("Tình trạng")</th>
+                    <th class="wpx80 text-center">@Locate.T("Thao tác")</th>
+                </tr>
+            </thead>
+            <tbody id="prisoner_bodyTable">
+
+                @if (Utils.IsNotEmpty(Model.listKhoVatLy))
+                {
+                    int stt = 1;
+                    foreach (var item in Model.listKhoVatLy)
+                    {
+
+                        <tr>
+                            <td>@(stt++)</td>
+                            <td>
+                                @Html.CusTextBox("idMa", "Ma", item.Ma, Locate.T("Mã kệ"), Locate.T("Mã kệ"), true, null)
+                            </td>
+                            <td>
+                                @Html.CusTextBox("idTenKe", "TenKe", item.TenKe, Locate.T("Tên kệ"), Locate.T("Tên kệ"), true, null)
+
+                            </td>
+                            <td>
+                                @Html.CusTextBox("idTenTu", "TenTu", item.TenTu, Locate.T("Tên tủ"), Locate.T("Tên tủ"), true, null)
+                            </td>
+                            <td>
+                                @Html.CusTextBox("idDay", "Day", item.Day, Locate.T("Dãy"), Locate.T("Dãy"), true, null)
+                            </td>
+                            <td>
+                                @Html.CusTextBoxDigit("idKichThuoc", "KichThuoc", item.KichThuoc, Locate.T("Kích thước"), Locate.T("Kích thước"), true, null)
+                            </td>
+                            <td>
+                                @Html.CusTextBoxDigit("idDaSuDung", "DaSuDung", item.DaSuDung, Locate.T("Đã sử dụng"), Locate.T("Đã sử dụng"), true, null)
+                            <td>
+                                @Html.CusTextBoxDigit("idConTrong", "ConTrong", item.ConTrong, Locate.T("Còn trống"), Locate.T("Còn trống"), true, null)
+                            </td>
+                            <td>
+                                @Html.CusDropdownList("idTinhTrang", "TinhTrang", "", new List<int>() { 2, 1, 3 }.Select(x => new SelectListItem() { Text = Utils.GetDescribe<EnuTinhTrang>((EnuTinhTrang)x), Value = x.ToString(), Selected = (item.TinhTrang == x) }).ToList(), null, Locate.T("Tình trạng"), true)
+                            </td>
+                            <td>
+                                <input name="ID" value="@item.ID" type="hidden" />
+                                <a title="@Locate.T("Xóa")" href="/htreport/delete-khovatly.html?ID=@item.ID">
+                                    <i class="menu-icon red fa fa-times"> @Locate.T("Xóa")</i>
+                                </a>
+                            </td>
+                        </tr>
+
+                    }
+                }
+                else
+                {
+                }
+            </tbody>
+        </table>
+        <script type="text/template" id="prisoner_template">
+            <tr class="trPrisoner">
+                <td></td>
+                <td>
+                    @Html.CusTextBox("idMa", "Ma", "", Locate.T("Mã kệ"), Locate.T("Mã kệ"), true, null)
+                </td>
+                <td>
+                    @Html.CusTextBox("idTenKe", "TenKe", "", Locate.T("Tên kệ"), Locate.T("Tên kệ"), true, null)
+
+                </td>
+                <td>
+                    @Html.CusTextBox("idTenTu", "TenTu", "", Locate.T("Tên tủ"), Locate.T("Tên tủ"), true, null)
+                </td>
+                <td>
+                    @Html.CusTextBox("idDay", "Day", "", Locate.T("Dãy"), Locate.T("Dãy"), true, null)
+                </td>
+                <td>
+                    @Html.CusTextBoxDigit("idKichThuoc", "KichThuoc", "", Locate.T("Kích thước"), Locate.T("Kích thước"), true, null)
+                </td>
+                <td>
+                    @Html.CusTextBoxDigit("idDaSuDung", "DaSuDung", "", Locate.T("Đã sử dụng"), Locate.T("Đã sử dụng"), true, null)
+                </td>
+                <td>
+                    @Html.CusTextBoxDigit("idConTrong", "ConTrong", "", Locate.T("Còn trống"), Locate.T("Còn trống"), true, null)
+                </td>
+                <td>
+                    @Html.CusDropdownList("idTinhTrang", "TinhTrang", "", new List<int>() { 2, 1, 3 }.Select(x => new SelectListItem() { Text = Utils.GetDescribe<EnuTinhTrang>((EnuTinhTrang)x), Value = x.ToString() }).ToList(), null, Locate.T("Tình trạng"), true)
+                </td>
+                <td>
+                    <input name="ID" value="0" type="hidden" />
+                    <a href="#" class="xPrisoner">
+                        <i class="menu-icon red fa fa-times">Xóa</i>
+                    </a>
+                </td>
+            </tr>
+        </script>
+        <div class="row DTTTFooter">
+            @if (Utils.IsEmpty(Model.listKhoVatLy))
+            {
+                <div class="col-sm-12 text-center padt10">
+                    <strong>
+                        @Locate.T("Không có dữ liệu Kho Vật Lý nào!")
+                    </strong>
+                </div>
+            }
+            <div class="col-sm-6">
+                <div class="dataTables_info" id="searchable_info" role="status" aria-live="polite"></div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-12 margin-bottom-10">
+                    <p id="messeage_err" class="red"></p>
+                    <button type="submit" class="btn btn-info">@Locate.T("Lưu")</button>
+                </div>
+            </div>
+            @*<div class="col-sm-6">@ViewBag.Pagination.SetTarget("#divArea").Render()</div>*@
+        </div>
+    </div>
+</form>

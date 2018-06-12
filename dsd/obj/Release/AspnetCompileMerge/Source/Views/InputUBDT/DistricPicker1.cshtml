@@ -1,0 +1,3 @@
+﻿@model List<Area>
+@Html.DropDownList("IDInputArea", Model.Select(x => new SelectListItem() { Text = x.Name, Value = x.ID.ToString() }).ToList(), Locate.T("--- Chọn quận/ huyện ---"), new { @class = "form -control input-sm"})
+

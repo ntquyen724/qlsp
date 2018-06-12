@@ -1,0 +1,126 @@
+﻿@model NationModel
+<form id="FrmCrNation" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+      title="@ViewBag.Title" action="@Model.Url" class="form-horizontal  bv-form validateForm quickSubmit successOnRefresh" method="post" novalidate="novalidate">
+    <button type="submit" class="bv-hidden-submit" style="display: none; width: 0; height: 0;"></button>
+    <div class="container-fluid">
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Tên tự gọi") <span class="red">*</span></label>
+            <div class="col-lg-8">
+                @Html.CusTextBox("CrtName", "Name", @Model.Nation.Name, Locate.T("Tên tự gọi"), Locate.T("Tên tự gọi"), true, null, 250)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Tên gọi khác")</label>
+            <div class="col-lg-8">
+                @Html.CusTextBox("CrtOtherName", "OtherName", @Model.Nation.OtherName, Locate.T("Tên gọi khác"), Locate.T("Tên gọi khác"), false, null, 250)
+            </div>
+        </div>
+
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Ảnh")<span class="red">*</span></label>
+            <div class="col-lg-8">
+                 <button type="button" class="btn btn-info attachFile" data-isonly="1" data-rel="#AttachFiles" data-target="#divfile"
+                    data-file-path="ImagePath"  data-file-name="ImageName">
+                <i class="glyphicon glyphicon-upload "></i> @Locate.T("Tải file")
+            </button>
+            <span id="divfile">
+                @if (!string.IsNullOrEmpty(Model.Nation.ImagePath))
+                {
+                    <span class="fileitem member">
+                        <img class="img-thumbnail" src="@GlobalConfig.StgSrcPath(Model.Nation.ImagePath)" title=@Model.Nation.Name><br>
+                        <input name="ImagePath" class="filePaths" type="hidden" value=@Model.Nation.ImagePath>
+                        <input name="ImageName" class="filePaths" type="hidden" value=@Model.Nation.ImageName>
+                        <button type="button" class="btn btn-xs btn-link close delMember">x</button>
+                    </span>
+                }
+            </span>
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Nhóm địa phương") <span class="red">*</span></label>
+            <div class="col-lg-8">
+                @Html.CusTextBox("CrtLocalGroup", "LocalGroup", @Model.Nation.LocalGroup, Locate.T("Nhóm địa phương"), Locate.T("Nhóm địa phương"), true, null, 250)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Dân số") <span class="red">*</span></label>
+            <div class="col-lg-8">
+                @Html.CusTextBox("CrtPopulation", "Population", @Model.Nation.Population, Locate.T("Dân số"), Locate.T("Dân số"), true, null, 250)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Ngôn ngữ") <span class="red">*</span></label>
+            <div class="col-lg-8">
+                @Html.CusTextBox("CrtLanguage", "Language", @Model.Nation.Language, Locate.T("Ngôn ngữ"), Locate.T("Ngôn ngữ"), true, null, 250)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Lịch sử")</label>
+            <div class="col-lg-8">
+                @Html.CusTextArea("CrtHistory", "History", @Model.Nation.History, Locate.T("Lịch sử"), null, 3)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Hoạt động sản xuất")</label>
+            <div class="col-lg-8">
+                @Html.CusTextArea("CrtActivities", "Activities", @Model.Nation.Activities, Locate.T("Hoạt động sản xuất"), null, 3)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Ở")</label>
+            <div class="col-lg-8">
+                @Html.CusTextArea("CrtHabitat", "Habitat", @Model.Nation.Habitat, Locate.T("Ở"), null, 3)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Phương tiện vận chuyển")</label>
+            <div class="col-lg-8">
+                @Html.CusTextArea("CrtTransportation", "Transportation", @Model.Nation.Transportation, Locate.T("Phương tiện vận chuyển"), null, 3)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Quan hệ xã hội")</label>
+            <div class="col-lg-8">
+                @Html.CusTextArea("CrtRelationship", "Relationship", @Model.Nation.Relationship, Locate.T("Quan hệ xã hội"), null, 3)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Cưới xin")</label>
+            <div class="col-lg-8">
+                @Html.CusTextArea("CrtWedding", "Wedding", @Model.Nation.Wedding, Locate.T("Cưới xin"), null, 3)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Học")</label>
+            <div class="col-lg-8">
+                @Html.CusTextArea("CrtLearning", "Learning", @Model.Nation.Learning, Locate.T("Học"), null, 3)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Văn nghệ")</label>
+            <div class="col-lg-8">
+                @Html.CusTextArea("CrtArt", "Art", @Model.Nation.Art, Locate.T("Văn nghệ"), null, 3)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Chơi")</label>
+            <div class="col-lg-8">
+                @Html.CusTextArea("CrtEntertainment", "Entertainment", @Model.Nation.Entertainment, Locate.T("Chơi"), null, 3)
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label">@Locate.T("Link liên kết")</label>
+            <div class="col-lg-8">
+                @Html.CusTextBox("CrtLinkAddress", "LinkAddress", @Model.Nation.LinkAddress, Locate.T("Link liên kết"), Locate.T("Link liên kết"), true, null, 100)
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-lg-offset-4 col-lg-8">
+            <input type="hidden" name="ID" value="@Model.Nation.ID" />
+            <button type="submit" class="btn btn-sm btn-primary">Lưu</button>
+        </div>
+    </div>
+</form>
